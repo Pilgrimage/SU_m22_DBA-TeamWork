@@ -44,6 +44,7 @@
     <Compile Include="Belt.cs" />
     <Compile Include="CurrentSensor.cs" />
     <Compile Include="CurrentSensorData.cs" />
+    <Compile Include="CurrentSensorType.cs" />
     <Compile Include="Drum.cs" />
     <Compile Include="Excavator.cs" />
     <Compile Include="Motor.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="SpeedSensorData.cs" />
     <Compile Include="TempSensor.cs" />
     <Compile Include="TempSensorData.cs" />
+    <Compile Include="TempSensorType.cs" />
     <Compile Include="TensionSensor.cs" />
     <Compile Include="TensionSensorData.cs" />
   </ItemGroup>

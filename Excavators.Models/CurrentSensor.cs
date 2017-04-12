@@ -17,9 +17,8 @@
         public string Name { get; set; }
         // Current of the Motor - Phase 2
 
-        [StringLength(50)]
-        public string Type { get; set; }
-        // 0..5 A -> 4..20 mA
+        public int CurrentSensorTypeId { get; set; }
+        public virtual CurrentSensorType CurrentSensorType { get; set; }
 
         [StringLength(250)]
         public string Description { get; set; }

@@ -17,9 +17,9 @@
         public string Name { get; set; }
 
         [StringLength(50)]
-        public string SpeedType { get; set; }
+        public string Type { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         public string Description { get; set; }
 
         public float? WarningLowSpeed { get; set; }  

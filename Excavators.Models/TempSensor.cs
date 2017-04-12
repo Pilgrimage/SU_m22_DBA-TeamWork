@@ -16,6 +16,9 @@
         [Required, StringLength(50)]
         public string Name { get; set; }
 
+        public int TempSensorTypeId { get; set; }
+        public TempSensorType TempSensorType { get; set; }
+
         [StringLength(250)]
         public string Description { get; set; }
 
