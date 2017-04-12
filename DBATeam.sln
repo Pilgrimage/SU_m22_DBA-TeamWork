@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.Models", "Excavators.Models\Excavators.Models.csproj", "{64796271-107E-4BCD-9270-74CCF91EE24D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.Data", "Excavators.Data\Excavators.Data.csproj", "{A7E7E143-7A83-42A5-836A-4F77A1DAA5DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.Client", "Excavators.Client\Excavators.Client.csproj", "{44394D1C-E451-4745-99D4-BD1A8F150818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64796271-107E-4BCD-9270-74CCF91EE24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64796271-107E-4BCD-9270-74CCF91EE24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64796271-107E-4BCD-9270-74CCF91EE24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64796271-107E-4BCD-9270-74CCF91EE24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7E7E143-7A83-42A5-836A-4F77A1DAA5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7E7E143-7A83-42A5-836A-4F77A1DAA5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7E7E143-7A83-42A5-836A-4F77A1DAA5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7E7E143-7A83-42A5-836A-4F77A1DAA5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44394D1C-E451-4745-99D4-BD1A8F150818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44394D1C-E451-4745-99D4-BD1A8F150818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44394D1C-E451-4745-99D4-BD1A8F150818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44394D1C-E451-4745-99D4-BD1A8F150818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
