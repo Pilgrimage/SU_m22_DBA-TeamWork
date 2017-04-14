@@ -48,19 +48,27 @@
     <Compile Include="Drum.cs" />
     <Compile Include="Excavator.cs" />
     <Compile Include="Motor.cs" />
+    <Compile Include="MotorType.cs" />
     <Compile Include="MRG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reducer.cs" />
+    <Compile Include="ReducerType.cs" />
     <Compile Include="RotorWheel.cs" />
     <Compile Include="ShiftingSensor.cs" />
     <Compile Include="ShiftingSensorData.cs" />
+    <Compile Include="ShiftingSensorType.cs" />
     <Compile Include="SpeedSensor.cs" />
     <Compile Include="SpeedSensorData.cs" />
+    <Compile Include="SpeedSensorType.cs" />
     <Compile Include="TempSensor.cs" />
     <Compile Include="TempSensorData.cs" />
     <Compile Include="TempSensorType.cs" />
     <Compile Include="TensionSensor.cs" />
     <Compile Include="TensionSensorData.cs" />
+    <Compile Include="TensionSensorType.cs" />
+    <Compile Include="VolumeSensor.cs" />
+    <Compile Include="VolumeSensorData.cs" />
+    <Compile Include="VolumeSensorType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

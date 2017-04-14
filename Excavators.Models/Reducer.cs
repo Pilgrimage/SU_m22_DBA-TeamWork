@@ -10,8 +10,9 @@
         [Required, StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(50)]
-        public string ReducerType { get; set; }
+        [Required]
+        public int ReducerTypeId { get; set; }
+        public virtual ReducerType ReducerType { get; set; }
 
         public int MrgId { get; set; }
         public virtual MRG Mrg { get; set; }

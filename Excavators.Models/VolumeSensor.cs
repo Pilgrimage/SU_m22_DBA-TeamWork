@@ -3,11 +3,11 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class ShiftingSensor
+    public class VolumeSensor
     {
-        public ShiftingSensor()
+        public VolumeSensor()
         {
-            this.ShiftingSensorDatas = new HashSet<ShiftingSensorData>();
+            this.VolumeSensorDatas = new HashSet<VolumeSensorData>();
         }
 
         [Key]
@@ -17,15 +17,17 @@
         public string Name { get; set; }
         
         [Required]
-        public int ShiftingSensorTypeId { get; set; }
-        public ShiftingSensorType ShiftingSensorType { get; set; }
-        
+        public int VolumeSensorTypeId { get; set; }
+        public VolumeSensorType VolumeSensorType { get; set; }
+
         [StringLength(250)]
         public string Description { get; set; }
 
+        [Required]
         public int BeltId { get; set; }
         public virtual Belt Belt { get; set; }
 
-        public virtual ICollection<ShiftingSensorData> ShiftingSensorDatas { get; set; }
+
+        public virtual ICollection<VolumeSensorData> VolumeSensorDatas { get; set; }
     }
 }

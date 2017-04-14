@@ -16,9 +16,10 @@
         [Required, StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(50)]
-        public string Type { get; set; }
-
+        [Required]
+        public int TensionSensorTypeId { get; set; }
+        public TensionSensorType TensionSensorType { get; set; }
+        
         [StringLength(250)]
         public string Description { get; set; }
 

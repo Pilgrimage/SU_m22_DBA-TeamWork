@@ -10,11 +10,11 @@
         [Required, StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(50)]
-        public string MotorType { get; set; }
+        [Required]
+        public int MotorTypeId { get; set; }
+        public virtual MotorType MotorType { get; set; }
 
         public int MrgId { get; set; }
         public virtual MRG Mrg { get; set; }
-
     }
 }
