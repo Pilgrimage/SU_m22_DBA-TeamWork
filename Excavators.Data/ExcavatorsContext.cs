@@ -10,7 +10,7 @@ namespace Excavators.Data
         public ExcavatorsContext()
             : base("name=ExcavatorsContext")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<ExcavatorsContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<ExcavatorsContext>());;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
