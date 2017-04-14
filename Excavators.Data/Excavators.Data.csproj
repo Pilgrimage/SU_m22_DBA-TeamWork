@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExcavatorsContext.cs" />
+    <Compile Include="ImportExcavators\ImportRs1200.cs" />
+    <Compile Include="ImportExcavators\ImportRs2000.cs" />
+    <Compile Include="ImportExcavators\Seeds.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

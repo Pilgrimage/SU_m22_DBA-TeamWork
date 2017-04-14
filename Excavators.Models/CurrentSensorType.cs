@@ -19,6 +19,9 @@
         [StringLength(50)]
         public string Manufacturer { get; set; }
 
+        [StringLength(250)]
+        public string Description { get; set; }
+
         public float RangeMin { get; set; }
         public float RangeMax { get; set; }
 

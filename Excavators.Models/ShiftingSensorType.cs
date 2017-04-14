@@ -18,6 +18,9 @@
         [StringLength(50)]
         public string Manufacturer { get; set; }
 
+        [StringLength(250)]
+        public string Description { get; set; }
+
         public virtual ICollection<ShiftingSensor> ShiftingSensors { get; set; }
 
     }
