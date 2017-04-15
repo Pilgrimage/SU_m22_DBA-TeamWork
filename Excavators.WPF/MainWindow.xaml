@@ -1,0 +1,17 @@
+﻿<Window x:Class="Excavators.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Excavators.WPF"
+        mc:Ignorable="d"
+        Title="Excavators" Height="600" Width="800">
+    <Grid Margin="0,0,-0.4,0.4" Height="570" VerticalAlignment="Bottom">
+        <Button x:Name="button" Content="Current Sensor" HorizontalAlignment="Left" Margin="30,26,0,0" VerticalAlignment="Top" Width="100" Height="35"/>
+        <Button x:Name="button1" Content="Speed Sensor" HorizontalAlignment="Left" Margin="197,26,0,0" VerticalAlignment="Top" Width="90" Height="35"/>
+        <Button x:Name="button2" Content="Temp Sensor" HorizontalAlignment="Left" Margin="356,26,0,0" VerticalAlignment="Top" Width="90" Height="35"/>
+        <Button x:Name="button3" Content="Tension Sensor" HorizontalAlignment="Left" Margin="517,26,0,0" VerticalAlignment="Top" Width="90" Height="35"/>
+        <Button x:Name="button4" Content="Volume Sensor" HorizontalAlignment="Left" Margin="676,26,0,0" VerticalAlignment="Top" Width="90" Height="35"/>
+
+    </Grid>
+</Window>
