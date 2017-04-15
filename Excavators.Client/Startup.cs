@@ -21,7 +21,7 @@
             //==================================
             using (var ctx = new ExcavatorsContext())
             {
-                if (ctx.MotorTypes.Count() != 0)
+                if (ctx.MotorTypes.Count() == 0)
                 {
                     Seeds.SeedMotorTypes();
                     Seeds.SeedReducerTypes();
@@ -37,14 +37,15 @@
 
             // Create excavator RS2000 B243
             //=============================
+            ImportRs2000.CreateRs2000();
 
-            //using (var ctx = new ExcavatorsContext())
-            //{
-            //    if (ctx.Excavators.FirstOrDefault(n => n.Name == "Rs2000 B243") == null)
-            //    {
-            //        ImportRs2000.CreateRs2000();
-            //    }
-            //};
+            using (var ctx = new ExcavatorsContext())
+            {
+                if (ctx.Excavators.FirstOrDefault(n => n.Name == "Rs2000 B243") == null)
+                {
+                    ImportRs2000.CreateRs2000();
+                }
+            };
 
 
         }
