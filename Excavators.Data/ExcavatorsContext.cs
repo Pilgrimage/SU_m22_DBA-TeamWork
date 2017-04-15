@@ -47,7 +47,7 @@ namespace Excavators.Data
 
         public virtual DbSet<TempSensor> TempSensors { get; set; }
         public virtual DbSet<TempSensorType> TempSensorTypes { get; set; }
-        public virtual DbSet<TempSensorData> TempSensorDatasSensorDatas { get; set; }
+        public virtual DbSet<TempSensorData> TempSensorDatas { get; set; }
 
         public virtual DbSet<SpeedSensor> SpeedSensors { get; set; }
         public virtual DbSet<SpeedSensorType> SpeedSensorTypes { get; set; }

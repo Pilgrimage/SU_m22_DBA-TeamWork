@@ -71,7 +71,6 @@ namespace Excavators.Data.ImportExcavators
             }
         }   // Done
 
-
         public static void SeedReducerTypes()
         {
             Console.WriteLine("Seeding Reducer Types...");
@@ -137,7 +136,6 @@ namespace Excavators.Data.ImportExcavators
 
         }   // Done
 
-
         public static void SeedCurrentSensorTypes()
         {
             Console.WriteLine("Seeding Current Sensor Types...");
@@ -168,7 +166,6 @@ namespace Excavators.Data.ImportExcavators
             }
 
         }   // Done
-
 
         public static void SeedTempSensorTypes()
         {
@@ -209,7 +206,6 @@ namespace Excavators.Data.ImportExcavators
 
         }   // Done
 
-
         public static void SeedSpeedSensorTypes()
         {
             Console.WriteLine("SeedingSpeed Sensor Types...");
@@ -231,7 +227,6 @@ namespace Excavators.Data.ImportExcavators
                 ctx.SaveChanges();
             }
         }   // Done
-
 
         public static void SeedVolumeSensorTypes()
         {
@@ -255,7 +250,6 @@ namespace Excavators.Data.ImportExcavators
             }
 
         }   // Done
-
 
         public static void SeedTensionSensorTypes()
         {
@@ -311,7 +305,6 @@ namespace Excavators.Data.ImportExcavators
             }
         }    // Done
 
-
         public static void SeedShiftingSensorTypes()
         {
             Console.WriteLine("Seeding Shifting Sensor Types...");
@@ -338,6 +331,5 @@ namespace Excavators.Data.ImportExcavators
             }
 
         }   // Done
-
     }
 }
