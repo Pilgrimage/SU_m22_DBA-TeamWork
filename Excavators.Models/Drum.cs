@@ -7,7 +7,7 @@
     {
         public Drum()
         {
-            this.Mrgs = new HashSet<MRG>();
+            this.MrGroups = new HashSet<MRGroup>();
         }
 
         [Key]
@@ -22,6 +22,6 @@
         public int BeltId { get; set; }
         public virtual Belt Belt { get; set; }
 
-        public virtual ICollection<MRG> Mrgs { get; set; }
+        public virtual ICollection<MRGroup> MrGroups { get; set; }
     }
 }

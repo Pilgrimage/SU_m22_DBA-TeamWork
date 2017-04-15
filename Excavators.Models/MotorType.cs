@@ -7,7 +7,7 @@
     {
         public MotorType()
         {
-            this.Motors = new HashSet<Motor>();
+            this.MRGroups = new HashSet<MRGroup>();
         }
 
         [Key]
@@ -22,6 +22,6 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public virtual ICollection<Motor> Motors { get; set; }
+        public virtual ICollection<MRGroup> MRGroups { get; set; }
     }
 }

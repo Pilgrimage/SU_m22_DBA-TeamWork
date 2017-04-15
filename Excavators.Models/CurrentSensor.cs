@@ -28,8 +28,8 @@
 
 
         [Required]
-        public int MotorId { get; set; }
-        public virtual Motor Motor { get; set; }
+        public int MRGroupId { get; set; }
+        public virtual MRGroup MRGroup { get; set; }
 
         public virtual ICollection<CurrentSensorData> CurrentSensorDatas { get; set; }
 

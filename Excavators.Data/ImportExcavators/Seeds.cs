@@ -91,37 +91,37 @@ namespace Excavators.Data.ImportExcavators
                     },
                     new ReducerType()
                     {
-                        Type = "Gear speed reducer 1 In 1 Out, 600kW",
+                        Type = "Gear speed reducer 1 In 1 Out, 500kW",
                         Manufacturer = "Nord DriveSystems",
                         Description = "Industrial gear reducer"
                     },
                     new ReducerType()
                     {
-                        Type = "Gear speed reducer 1 In 1 Out, 400kW",
+                        Type = "Gear speed reducer 1 In 1 Out, 380kW",
                         Manufacturer = "Nord DriveSystems",
                         Description = "Industrial gear reducer"
                     },
                     new ReducerType()
                     {
-                        Type = "Gear speed reducer 1 In 1 Out, 250kW",
+                        Type = "Gear speed reducer 1 In 1 Out, 230kW",
                         Manufacturer = "Nord DriveSystems",
                         Description = "Industrial gear reducer"
                     },
                     new ReducerType()
                     {
-                        Type = "Gear speed reducer 1 In 1 Out, 200kW",
+                        Type = "Gear speed reducer 1 In 1 Out, 180kW",
                         Manufacturer = "Nord DriveSystems",
                         Description = "Industrial gear reducer"
                     },
                     new ReducerType()
                     {
-                        Type = "Gear speed reducer 1 In 1 Out, 150kW",
+                        Type = "Gear speed reducer 1 In 1 Out, 130kW",
                         Manufacturer = "Nord DriveSystems",
                         Description = "Industrial gear reducer"
                     },
                     new ReducerType()
                     {
-                        Type = "Gear speed reducer 1 In 1 Out, 100kW",
+                        Type = "Gear speed reducer 1 In 1 Out, 80kW",
                         Manufacturer = "Nord DriveSystems",
                         Description = "Industrial gear reducer"
                     }
@@ -174,7 +174,7 @@ namespace Excavators.Data.ImportExcavators
             {
                 new TempSensorType()
                     {
-                        Type = "TSA-RD.T9.5.30.5SL. M3.B.2.X.X-OV",
+                        Type = "TSA-RD.T9.5.30.5SL.M3.B.2.X.X-OV",
                         Manufacturer = "Comeco Ltd",
                         Description = "Temperature sensor Pt100, D=5mm, L=30 mm, Silicon cable 5m, vibration resistant",
                         RangeMin = -50.00f,
@@ -182,7 +182,7 @@ namespace Excavators.Data.ImportExcavators
                     },
                 new TempSensorType()
                     {
-                        Type = "TSAG2-RD.T9.5.17. 30.5SL.Q29.M1.B.2.X.X-OV",
+                        Type = "TSAG2-RD.T9.5.17.30.5SL.Q29.M1.B.2.X.X-OV",
                         Manufacturer = "Comeco Ltd",
                         Description = "Temperature sensor Pt100, M8x1.25mm, Silicon cable 5m, vibration resistant",
                         RangeMin = -50.00f,
@@ -190,7 +190,7 @@ namespace Excavators.Data.ImportExcavators
                     },
                 new TempSensorType()
                     {
-                        Type = "TSAT-RD.T9.6.5.20. 5SL.M1.B.2",
+                        Type = "TSAT-RD.T9.6.5.20.5SL.M1.B.2",
                         Manufacturer = "Comeco Ltd",
                         Description = "Temperature sensor Pt100, Cable shoe, Silicon cable 5m, vibration resistant",
                         RangeMin = -50.00f,

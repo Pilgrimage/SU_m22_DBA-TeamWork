@@ -47,11 +47,9 @@
     <Compile Include="CurrentSensorType.cs" />
     <Compile Include="Drum.cs" />
     <Compile Include="Excavator.cs" />
-    <Compile Include="Motor.cs" />
     <Compile Include="MotorType.cs" />
-    <Compile Include="MRG.cs" />
+    <Compile Include="MRGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reducer.cs" />
     <Compile Include="ReducerType.cs" />
     <Compile Include="RotorWheel.cs" />
     <Compile Include="ShiftingSensor.cs" />

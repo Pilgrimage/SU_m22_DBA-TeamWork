@@ -37,12 +37,10 @@ namespace Excavators.Data
         public virtual DbSet<RotorWheel> RotorWheels { get; set; }
         public virtual DbSet<Belt> Belts { get; set; }
         public virtual DbSet<Drum> Drums { get; set; }
-        public virtual DbSet<MRG> MRGs { get; set; }
+        public virtual DbSet<MRGroup> MRGroups { get; set; }
 
-        public virtual DbSet<Reducer> Reducers { get; set; }
         public virtual DbSet<ReducerType> ReducerTypes { get; set; }
 
-        public virtual DbSet<Motor> Motors { get; set; }
         public virtual DbSet<MotorType> MotorTypes { get; set; }
 
         public virtual DbSet<TempSensor> TempSensors { get; set; }

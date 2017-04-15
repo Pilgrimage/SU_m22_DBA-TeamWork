@@ -7,7 +7,7 @@
     {
         public ReducerType()
         {
-            this.Reducers = new HashSet<Reducer>();
+            this.MRGroups = new HashSet<MRGroup>();
         }
 
         [Key]
@@ -22,7 +22,7 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public virtual ICollection<Reducer> Reducers { get; set; }
+        public virtual ICollection<MRGroup> MRGroups { get; set; }
 
     }
 }
