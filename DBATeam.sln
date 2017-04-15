@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.Data", "Excavato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.Client", "Excavators.Client\Excavators.Client.csproj", "{44394D1C-E451-4745-99D4-BD1A8F150818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.WPF", "Excavators.WPF\Excavators.WPF.csproj", "{843CACE9-B450-455F-8869-640F0B7E3444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{44394D1C-E451-4745-99D4-BD1A8F150818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44394D1C-E451-4745-99D4-BD1A8F150818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44394D1C-E451-4745-99D4-BD1A8F150818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843CACE9-B450-455F-8869-640F0B7E3444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843CACE9-B450-455F-8869-640F0B7E3444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843CACE9-B450-455F-8869-640F0B7E3444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843CACE9-B450-455F-8869-640F0B7E3444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
