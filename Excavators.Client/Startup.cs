@@ -35,15 +35,18 @@
             };
 
 
-            // Create excavator RS2000 B243
-            //=============================
-            ImportRs2000.CreateRs2000();
+            // Create excavators RS2000 B243 and Rs1200 B239
+            //==============================================
 
             using (var ctx = new ExcavatorsContext())
             {
                 if (ctx.Excavators.FirstOrDefault(n => n.Name == "Rs2000 B243") == null)
                 {
                     ImportRs2000.CreateRs2000();
+                }
+                if (ctx.Excavators.FirstOrDefault(n => n.Name == "Rs1200 B239") == null)
+                {
+                    ImportRs1200.CreateRs1200();
                 }
             };
 

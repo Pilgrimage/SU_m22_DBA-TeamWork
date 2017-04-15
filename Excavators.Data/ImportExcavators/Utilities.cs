@@ -1,58 +1,21 @@
 ﻿namespace Excavators.Data.ImportExcavators
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Excavators.Models;
 
-    public static class ImportRs2000
+    public static class Utilities
     {
-        public static void CreateRs2000()
-        {
-            Console.WriteLine("Creating Rs2000 B243...");
-
-            // Add Excavator
-            int exId = Utilities.AddExcavator("Rs2000 B243", "Rs2000", "MMI, Rudnik Troyanovo-Sever, RTNK-5");
-
-            // Add Rotor Wheel
-            int rwId = Utilities.AddRotorWheel(exId);
-            int mrgRwId = Utilities.AddMrGroup(rwId, "1000kW", "MRGroup of RW", "toRW");
-            Utilities.AddSensorsToMRGroup(mrgRwId);
-
-            // Add Rotor Belt
-            int rotorBeltId = Utilities.AddBeltWithSensors(exId, "Rotor Belt");
-            int driveDrumRbId = Utilities.AddDrumWithSensors(rotorBeltId, "Drive Drum of Rotor Belt");
-            int leftMrgDdRbId = Utilities.AddMrGroup(driveDrumRbId, "500kW", "Left MRGroup of Rotor Belt", "toDrum");
-            int rightMrgDdRbId = Utilities.AddMrGroup(driveDrumRbId, "500kW", "Right MRGroup of Rotor Belt", "toDrum");
-            Utilities.AddSensorsToMRGroup(leftMrgDdRbId);
-            Utilities.AddSensorsToMRGroup(rightMrgDdRbId);
-            int passiveDrumRbId = Utilities.AddDrumWithSensors(rotorBeltId, "Passive Drum of Rotor Belt");
-
-            // Add Middle Belt
-            int middleBeltId = Utilities.AddBeltWithSensors(exId, "Middle Belt");
-            int driveDrumMbId = Utilities.AddDrumWithSensors(middleBeltId, "Drive Drum of Middle Belt");
-            int leftMrgDdMbId = Utilities.AddMrGroup(driveDrumMbId, "230kW", "Left MRGroup of Middle Belt", "toDrum");
-            int rightMrgDdMbId = Utilities.AddMrGroup(driveDrumMbId, "230kW", "Right MRGroup of Middle Belt", "toDrum");
-            Utilities.AddSensorsToMRGroup(leftMrgDdMbId);
-            Utilities.AddSensorsToMRGroup(rightMrgDdMbId);
-            int passiveDrumMbId = Utilities.AddDrumWithSensors(middleBeltId, "Passive Drum of Middle Belt");
-
-            // Add Unload Belt
-            int unloadBeltId = Utilities.AddBeltWithSensors(exId, "Unload Belt");
-            int driveDrumUbId = Utilities.AddDrumWithSensors(unloadBeltId, "Drive Drum of Unload Belt");
-            int leftMrgDdUbId = Utilities.AddMrGroup(driveDrumUbId, "380kW", "Left MRGroup of Unload Belt", "toDrum");
-            Utilities.AddSensorsToMRGroup(leftMrgDdUbId);
-            int passiveDrumUbId = Utilities.AddDrumWithSensors(unloadBeltId, "Passive Drum of Unload Belt");
-
-        }
-
-/*
-        private static int AddExcavator()
+        public static int AddExcavator(string name, string type, string location)
         {
             using (var ctx = new ExcavatorsContext())
             {
                 Excavator item = new Excavator()
                 {
-                    Name = "Rs2000 B243",
-                    Type = "Rs2000",
-                    Location = "MMI, Rudnik Troyanovo-Sever, RTNK-5"
+                    Name = name,
+                    Type = type,
+                    Location = location
                 };
                 ctx.Excavators.Add(item);
                 ctx.SaveChanges();
@@ -61,7 +24,7 @@
         }
 
         // Rotor Wheel
-        private static int AddRotorWheel(int exId)
+        public static int AddRotorWheel(int exId)
         {
             using (var ctx = new ExcavatorsContext())
             {
@@ -76,9 +39,9 @@
             }
         }
 
-        
+
         // Rotor Belt
-        private static int AddBeltWithSensors(int exId, string name)
+        public static int AddBeltWithSensors(int exId, string name)
         {
             using (var ctx = new ExcavatorsContext())
             {
@@ -137,7 +100,7 @@
         }
 
 
-        private static int AddDrumWithSensors(int beltId, string name)
+        public static int AddDrumWithSensors(int beltId, string name)
         {
             using (var ctx = new ExcavatorsContext())
             {
@@ -197,10 +160,9 @@
 
 
         }
-
         
 
-        private static int AddMrGroup(int upId, string type, string name, string flag)
+        public static int AddMrGroup(int upId, string type, string name, string flag)
         {
             using (var ctx = new ExcavatorsContext())
             {
@@ -245,9 +207,9 @@
                 return 0;
             }
         }
-        
 
-        private static void AddSensorsToMRGroup(int mrGroupId)
+
+        public static void AddSensorsToMRGroup(int mrGroupId)
         {
             using (var ctx = new ExcavatorsContext())
             {
@@ -327,6 +289,6 @@
                 ctx.SaveChanges();
             }
         }
-        */
+
     }
 }
