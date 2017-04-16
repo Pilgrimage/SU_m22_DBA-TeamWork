@@ -1,4 +1,6 @@
-﻿namespace Excavators.Client
+﻿using Excavators.Data.SeedSensorDatas;
+
+namespace Excavators.Client
 {
     using Excavators.Data;
     using Excavators.Models;
@@ -51,6 +53,12 @@
             };
 
 
+            // Seed measurement's Values
+
+            SeedCurrentData.FillCurrentSensors();
+
+
+
         }
-    }
+}
 }
