@@ -5,15 +5,10 @@
 
     public class SpeedSensorData
     {
-        public SpeedSensorData()
-        {
-            DTCollected = DateTime.Now;
-        }
-
         [Key]
         public int Id { get; set; }
 
-        public float Speed { get; set; }    // in meters/sec
+        public double Speed { get; set; }    // in meters/sec
 
         public DateTime DTCollected { get; set; }
 

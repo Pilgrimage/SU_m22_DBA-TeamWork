@@ -46,6 +46,16 @@
     <Compile Include="CurrentSensorData.cs" />
     <Compile Include="CurrentSensorType.cs" />
     <Compile Include="Drum.cs" />
+    <Compile Include="DTO\CurrentAllDto.cs" />
+    <Compile Include="DTO\CurrentWarningsDto.cs" />
+    <Compile Include="DTO\SpeedAllDto.cs" />
+    <Compile Include="DTO\SpeedWarningsDto.cs" />
+    <Compile Include="DTO\TempAllDto.cs" />
+    <Compile Include="DTO\TempWarningsDto.cs" />
+    <Compile Include="DTO\TensionAllDto.cs" />
+    <Compile Include="DTO\TensionWarningsDto.cs" />
+    <Compile Include="DTO\VolumeAllDto.cs" />
+    <Compile Include="DTO\VolumeWarningsDto.cs" />
     <Compile Include="Excavator.cs" />
     <Compile Include="MotorType.cs" />
     <Compile Include="MRGroup.cs" />

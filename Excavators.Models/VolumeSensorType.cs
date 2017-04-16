@@ -22,8 +22,8 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public float RangeMin { get; set; }
-        public float RangeMax { get; set; }
+        public double RangeMin { get; set; }
+        public double RangeMax { get; set; }
 
 
         public virtual ICollection<VolumeSensor> VolumeSensors { get; set; }

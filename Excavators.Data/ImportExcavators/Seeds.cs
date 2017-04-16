@@ -146,16 +146,16 @@ namespace Excavators.Data.ImportExcavators
                         Type = "Serie 5AAC, model AC1-5",
                         Manufacturer = "Delta instruments",
                         Description = "Current to Current Transmitter, 0-5A -> 4-20mADC",
-                        RangeMin = 0.00f,   // Ampers
-                        RangeMax = 150.00f    // Ampers
+                        RangeMin = 0.00,   // Ampers
+                        RangeMax = 150.00    // Ampers
                     },
                 new CurrentSensorType()
                     {
                         Type = "Serie 5AAC, model AC1-15",
                         Manufacturer = "Delta instruments",
                         Description = "Current to Current Transmitter, 0-15A -> 4-20mADC",
-                        RangeMin = 0.00f,   // Ampers
-                        RangeMax = 450.00f    // Ampers
+                        RangeMin = 0.00,   // Ampers
+                        RangeMax = 450.00    // Ampers
                     }
                 };
 
@@ -177,24 +177,24 @@ namespace Excavators.Data.ImportExcavators
                         Type = "TSA-RD.T9.5.30.5SL.M3.B.2.X.X-OV",
                         Manufacturer = "Comeco Ltd",
                         Description = "Temperature sensor Pt100, D=5mm, L=30 mm, Silicon cable 5m, vibration resistant",
-                        RangeMin = -50.00f,
-                        RangeMax = 200.00f
+                        RangeMin = -50.00,
+                        RangeMax = 200.00
                     },
                 new TempSensorType()
                     {
                         Type = "TSAG2-RD.T9.5.17.30.5SL.Q29.M1.B.2.X.X-OV",
                         Manufacturer = "Comeco Ltd",
                         Description = "Temperature sensor Pt100, M8x1.25mm, Silicon cable 5m, vibration resistant",
-                        RangeMin = -50.00f,
-                        RangeMax = 200.00f
+                        RangeMin = -50.00,
+                        RangeMax = 200.00
                     },
                 new TempSensorType()
                     {
                         Type = "TSAT-RD.T9.6.5.20.5SL.M1.B.2",
                         Manufacturer = "Comeco Ltd",
                         Description = "Temperature sensor Pt100, Cable shoe, Silicon cable 5m, vibration resistant",
-                        RangeMin = -50.00f,
-                        RangeMax = 200.00f
+                        RangeMin = -50.00,
+                        RangeMax = 200.00
                     },
             };
 
@@ -208,7 +208,7 @@ namespace Excavators.Data.ImportExcavators
 
         public static void SeedSpeedSensorTypes()
         {
-            Console.WriteLine("SeedingSpeed Sensor Types...");
+            Console.WriteLine("Seeding Speed Sensor Types...");
             List<SpeedSensorType> speedSensorTypes = new List<SpeedSensorType>()
             {
                 new SpeedSensorType()
@@ -216,8 +216,8 @@ namespace Excavators.Data.ImportExcavators
                         Type = "XS130B3PBM12",
                         Manufacturer = "Schneider Electric",
                         Description = "OsiSense Inductive proximity sensors, D=30mm",
-                        RangeMin = 0.00f,
-                        RangeMax = 20.00f
+                        RangeMin = 0.00,
+                        RangeMax = 20.00
                     }
             };
 
@@ -238,8 +238,8 @@ namespace Excavators.Data.ImportExcavators
                         Type = "RUC300-M3047-LIAP8X-H1151",
                         Manufacturer = "TURCK Ltd",
                         Description = "Diffuse mode UltraSound sensor 0.3 ... 3 m",
-                        RangeMin = 0.00f,
-                        RangeMax = 1000.00f
+                        RangeMin = 0.00,
+                        RangeMax = 1000.00
                     },
             };
 
@@ -261,40 +261,40 @@ namespace Excavators.Data.ImportExcavators
                         Type = "Load Pin Model 5000-HOIS002913",
                         Manufacturer = "Sensy Ltd",
                         Description = "Load Pin (Axe Dynamometrique),  Output 4...20 mA",
-                        RangeMin = 0.00f,
-                        RangeMax = 7.50f
+                        RangeMin = 0.00,
+                        RangeMax = 7.50
                     },
                 new TensionSensorType()
                     {
                         Type = "Load Pin Model 5000-HOIS002914",
                         Manufacturer = "Sensy Ltd",
                         Description = "Load Pin (Axe Dynamometrique),  Output 4...20 mA",
-                        RangeMin = 0.00f,
-                        RangeMax = 12.00f
+                        RangeMin = 0.00,
+                        RangeMax = 12.00
                     },
                 new TensionSensorType()
                     {
                         Type = "Load Pin Model 5000-HOIS002915",
                         Manufacturer = "Sensy Ltd",
                         Description = "Load Pin (Axe Dynamometrique),  Output 4...20 mA",
-                        RangeMin = 0.00f,
-                        RangeMax = 7.50f
+                        RangeMin = 0.00,
+                        RangeMax = 7.50
                     },
                 new TensionSensorType()
                     {
                         Type = "Load Cell Model SB-5000S",
                         Manufacturer = "Cardinal Scale Mfg Co",
                         Description = "Load Cell, Output 4...20 mA",
-                        RangeMin = 0.00f,
-                        RangeMax = 2.50f
+                        RangeMin = 0.00,
+                        RangeMax = 2.50
                     },
                 new TensionSensorType()
                     {
                         Type = "Load Cell Model 5950-FORC000002",
                         Manufacturer = "Sensy Ltd",
                         Description = "Low profile compression load cell, Output 4...20 mA",
-                        RangeMin = 0.00f,   // tons
-                        RangeMax = 15.00f   // tons
+                        RangeMin = 0.00,   // tons
+                        RangeMax = 15.00   // tons
                     }
             };
 

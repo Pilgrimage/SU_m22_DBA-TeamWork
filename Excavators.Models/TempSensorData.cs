@@ -5,15 +5,10 @@
 
     public class TempSensorData
     {
-        public TempSensorData()
-        {
-            DTCollected = DateTime.Now;
-        }
-
         [Key]
         public int Id { get; set; }
 
-        public float Temperature { get; set; }
+        public double Temperature { get; set; }
 
         public DateTime DTCollected { get; set; }
 

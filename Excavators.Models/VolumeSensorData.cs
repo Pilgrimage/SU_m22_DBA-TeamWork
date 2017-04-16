@@ -5,15 +5,11 @@
 
     public class VolumeSensorData
     {
-        public VolumeSensorData()
-        {
-            DTCollected = DateTime.Now;
-        }
 
         [Key]
         public int Id { get; set; }
 
-        public float Volume { get; set; }   // Volume = m3/s
+        public double Volume { get; set; }   // Volume = m3/s
 
         public DateTime DTCollected { get; set; }
 

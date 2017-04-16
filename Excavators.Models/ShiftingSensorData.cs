@@ -5,14 +5,10 @@
 
     public class ShiftingSensorData
     {
-        public ShiftingSensorData()
-        {
-            DTCollected = DateTime.Now;
-        }
         [Key]
         public int Id { get; set; }
 
-        public bool? IsShifted { get; set; }
+        public bool IsShifted { get; set; }
 
         public DateTime DTCollected { get; set; }
 

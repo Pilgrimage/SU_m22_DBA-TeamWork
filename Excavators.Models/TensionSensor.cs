@@ -23,9 +23,9 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public float? WarningLowTension { get; set; }
-        public float? WarningHighTension { get; set; }
-        public float? WarningEmergencyHighTension { get; set; }
+        public double WarningLowTension { get; set; }
+        public double WarningHighTension { get; set; }
+        public double WarningEmergencyHighTension { get; set; }
 
 
         public int BeltId { get; set; }

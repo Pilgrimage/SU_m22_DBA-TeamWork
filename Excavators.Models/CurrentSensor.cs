@@ -23,8 +23,8 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public float? WarningHighCurrent { get; set; }
-        public float? WarningEmergencyHighCurrent { get; set; }
+        public double WarningHighCurrent { get; set; }
+        public double WarningEmergencyHighCurrent { get; set; }
 
 
         [Required]

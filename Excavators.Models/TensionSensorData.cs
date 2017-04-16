@@ -5,14 +5,10 @@
 
     public class TensionSensorData
     {
-        public TensionSensorData()
-        {
-            DTCollected = DateTime.Now;
-        }
         [Key]
         public int Id { get; set; }
 
-        public float Tension { get; set; }
+        public double Tension { get; set; }
 
         public DateTime DTCollected { get; set; }
 

@@ -5,15 +5,11 @@
 
     public class CurrentSensorData
     {
-        public CurrentSensorData()
-        {
-            DTCollected = DateTime.Now;
-        }
 
         [Key]
         public int Id { get; set; }
 
-        public float Current { get; set; }
+        public double Current { get; set; }
 
         public DateTime DTCollected { get; set; }
 

@@ -86,9 +86,9 @@
                     Description = String.Concat("Load cell sensor for tension of belt (on ", item.Type, ")"),
                     TensionSensorTypeId = ctx.TensionSensorTypes.FirstOrDefault(t => t.Type == "Load Cell Model 5950-FORC000002").Id,
                     BeltId = beltId,
-                    WarningLowTension = 2.00f,  // in tons
-                    WarningHighTension = 10.00f,
-                    WarningEmergencyHighTension = 12.00f
+                    WarningLowTension = 2.00,  // in tons
+                    WarningHighTension = 10.00,
+                    WarningEmergencyHighTension = 12.00
                 };
 
                 ctx.ShiftingSensors.Add(shiftingSensor);
@@ -126,8 +126,8 @@
                         Description = String.Concat("RTDx6 - Left bearing of ", item.Type),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSA-RD.T9.5.30.5SL.M3.B.2.X.X-OV").Id,
                         DrumId = drumId,
-                        WarningHighTemp = 90.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 90.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
                     new TempSensor()
                     {
@@ -135,8 +135,8 @@
                         Description = String.Concat("RTDx7 - Right bearing of ", item.Type),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSA-RD.T9.5.30.5SL.M3.B.2.X.X-OV").Id,
                         DrumId = drumId,
-                        WarningHighTemp = 90.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 90.00,
+                        WarningEmergencyHighTemp = 120.00
                     }
                 };
 
@@ -146,8 +146,8 @@
                     Description = String.Concat(item.Name, " speed of ", item.Type),
                     SpeedSensorTypeId = ctx.SpeedSensorTypes.FirstOrDefault(t => t.Type == "XS130B3PBM12").Id,
                     DrumId = drumId,
-                    WarningLowSpeed = 4.00f,        // in m/s
-                    WarningHighSpeed = 12.00f
+                    WarningLowSpeed = 4.00,        // in m/s
+                    WarningHighSpeed = 12.00
                 };
 
                 ctx.TempSensors.AddRange(tempSensors);
@@ -223,8 +223,8 @@
                         Description = String.Concat("RTDx0 - Rear bearing of motor in ", mrGroup.Name),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSA-RD.T9.5.30.5SL.M3.B.2.X.X-OV").Id,
                         MRGroupId = mrGroup.Id,
-                        WarningHighTemp = 80.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 80.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
                     new TempSensor()
                     {
@@ -232,8 +232,8 @@
                         Description = String.Concat("RTDx1 - Front bearing of motor in ", mrGroup.Name),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSA-RD.T9.5.30.5SL.M3.B.2.X.X-OV").Id,
                         MRGroupId = mrGroup.Id,
-                        WarningHighTemp = 80.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 80.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
                     new TempSensor()
                     {
@@ -241,8 +241,8 @@
                         Description = String.Concat("RTDx2 - Front bearing of reducer, 1st stage in ", mrGroup.Name),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSAG2-RD.T9.5.17.30.5SL.Q29.M1.B.2.X.X-OV").Id,
                         MRGroupId = mrGroup.Id,
-                        WarningHighTemp = 90.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 90.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
                     new TempSensor()
                     {
@@ -250,8 +250,8 @@
                         Description = String.Concat("RTDx3 - Rear bearing of reducer, 1st stage in ", mrGroup.Name),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSAG2-RD.T9.5.17.30.5SL.Q29.M1.B.2.X.X-OV").Id,
                         MRGroupId = mrGroup.Id,
-                        WarningHighTemp = 90.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 90.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
                     new TempSensor()
                     {
@@ -259,8 +259,8 @@
                         Description = String.Concat("RTDx4 - Left bearing of reducer, 2nd stage in ", mrGroup.Name),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSAG2-RD.T9.5.17.30.5SL.Q29.M1.B.2.X.X-OV").Id,
                         MRGroupId = mrGroup.Id,
-                        WarningHighTemp = 90.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 90.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
                     new TempSensor()
                     {
@@ -268,8 +268,8 @@
                         Description = String.Concat("RTDx5 - Right bearing of reducer, 2nd stage in ", mrGroup.Name),
                         TempSensorTypeId = ctx.TempSensorTypes.FirstOrDefault(t=>t.Type=="TSAG2-RD.T9.5.17.30.5SL.Q29.M1.B.2.X.X-OV").Id,
                         MRGroupId = mrGroup.Id,
-                        WarningHighTemp = 90.00f,
-                        WarningEmergencyHighTemp = 120.00f
+                        WarningHighTemp = 90.00,
+                        WarningEmergencyHighTemp = 120.00
                     },
 
                 };
@@ -280,8 +280,8 @@
                     Description = String.Concat("CT - Current of motor in ", mrGroup.Name),
                     CurrentSensorTypeId = ctx.CurrentSensorTypes.FirstOrDefault(t => t.Type == "Serie 5AAC, model AC1-15").Id,
                     MRGroupId = mrGroup.Id,
-                    WarningHighCurrent = 375.00f,
-                    WarningEmergencyHighCurrent = 410.00f,
+                    WarningHighCurrent = 375.00,
+                    WarningEmergencyHighCurrent = 410.00,
                 };
 
                 ctx.TempSensors.AddRange(tempSensors);

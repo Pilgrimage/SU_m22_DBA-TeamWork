@@ -23,8 +23,8 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public float? WarningHighTemp { get; set; }
-        public float? WarningEmergencyHighTemp { get; set; }
+        public double WarningHighTemp { get; set; }
+        public double WarningEmergencyHighTemp { get; set; }
 
         public int? DrumId { get; set; }
         public virtual Drum Drum { get; set; }
@@ -32,13 +32,6 @@
         public int? MRGroupId { get; set; }
         public virtual MRGroup MRGroup { get; set; }
 
-        //public int? MotorId { get; set; }
-        //public virtual Motor Motor { get; set; }
-
-        //public int? ReducerId { get; set; }
-        //public virtual Reducer Reducer { get; set; }
-
         public virtual ICollection<TempSensorData> TempSensorDatas { get; set; }
-
     }
 }

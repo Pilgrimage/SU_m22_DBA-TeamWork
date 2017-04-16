@@ -23,8 +23,8 @@
         [StringLength(250)]
         public string Description { get; set; }
 
-        public float? WarningLowSpeed { get; set; }  
-        public float? WarningHighSpeed { get; set; }
+        public double WarningLowSpeed { get; set; }  
+        public double WarningHighSpeed { get; set; }
 
         public int DrumId { get; set; }
         public virtual Drum Drum { get; set; }
