@@ -1,0 +1,13 @@
+http://www.wpf-tutorial.com/tabcontrol/using-the-tabcontrol/
+
+http://stackoverflow.com/questions/6463076/displaying-data-table-in-c-sharp-wpf-application
+
+http://www.wpftutorial.net/DataGrid.html
+
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/633b9bb0-c3cb-4ab2-aff3-df48065a14f4/how-to-make-a-drop-down-menu-in-wpf?forum=wpf
+http://stackoverflow.com/questions/16479768/how-to-easily-draw-graphs-in-wpf
+
+
+
+
+http://www.wpf-tutorial.com/
