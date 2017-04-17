@@ -1,7 +1,5 @@
 ﻿namespace Excavators.Models.DTO
 {
-    using System;
-
     public class CurrentWarningsDto
     {
         public string SensorName { get; set; }

@@ -47,6 +47,7 @@ namespace Excavators.Client
                 {
                     ImportRs2000.CreateRs2000();
                 }
+
                 if (ctx.Excavators.FirstOrDefault(n => n.Name == "Rs1200 B239") == null)
                 {
                     ImportRs1200.CreateRs1200();
@@ -61,7 +62,7 @@ namespace Excavators.Client
                 {
                     SeedMeasurementDatas.FillTempSensors();
                     SetDataToDto.SetDataToTempDtos();
-                    // There are tables (objects): 
+                    // There are two tables (objects): 
                     // tempAllDto as List<TempAllDto>
                     // tempWarningsDto as List<TempWarningsDto>
                 }
@@ -70,9 +71,45 @@ namespace Excavators.Client
                 {
                     SeedMeasurementDatas.FillCurrentSensors();
                     SetDataToDto.SetDataToCurrentDtos();
-                    // There are tables (objects): 
+                    // There are two tables (objects): 
                     // currentAllDto as List<CurrentAllDto>
                     // currentWarningsDto as List<CurrentWarningsDto>
+                }
+
+                if (!ctx.SpeedSensorDatas.Any())
+                {
+                    SeedMeasurementDatas.FillSpeedSensors();
+                    SetDataToDto.SetDataToSpeedDtos();
+                    // There are two tables (objects): 
+                    // speedAllDto as List<SpeedAllDto>
+                    // speedWarningsDto as List<SpeedWarningsDto>
+                }
+
+                if (!ctx.TensionSensorDatas.Any())
+                {
+                    SeedMeasurementDatas.FillTensionSensors();
+                    SetDataToDto.SetDataToTensionDtos();
+                    // There are two tables (objects): 
+                    // tensionAllDto as List<TensionAllDto>
+                    // tensionWarningsDto as List<TensionWarningsDto>
+                }
+
+                if (!ctx.VolumeSensorDatas.Any())
+                {
+                    //SeedMeasurementDatas.FillTensionSensors();
+                    //SetDataToDto.SetDataToTensionDtos();
+                    //// There are two tables (objects): 
+                    //// tensionAllDto as List<TensionAllDto>
+                    //// tensionWarningsDto as List<TensionWarningsDto>
+                }
+
+                if (!ctx.ShiftingSensorDatas.Any())
+                {
+                    //SeedMeasurementDatas.FillTensionSensors();
+                    //SetDataToDto.SetDataToTensionDtos();
+                    //// There are two tables (objects): 
+                    //// tensionAllDto as List<TensionAllDto>
+                    //// tensionWarningsDto as List<TensionWarningsDto>
                 }
 
 

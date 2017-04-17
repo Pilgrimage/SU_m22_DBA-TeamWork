@@ -111,24 +111,167 @@
             }
         }
 
-
-
-        private static int CheckSensorStatus(double current, double warningHigh, double emergencyHigh, double rangeMin, double rangeMax)
+        public static void FillSpeedSensors()
         {
-            if ((rangeMax > 0 && current > rangeMax) || current < rangeMin)
+            using (var ctx = new ExcavatorsContext())
+            {
+                DateTime dt = DateTime.Now;
+                int speedSensorsCount = ctx.SpeedSensors.Count();
+                int[] speedIdArray = ctx.SpeedSensors.Select(i => i.Id).ToArray();
+
+                foreach (var sensorId in speedIdArray)
+                {
+                    Console.WriteLine($"Seed data for speed sensor {sensorId} of {speedSensorsCount}");
+
+                    List<SpeedSensorData> measurements = new List<SpeedSensorData>();
+
+                    var ss = ctx.SpeedSensors.Find(sensorId);
+                    var sst = ctx.SpeedSensorTypes.Find(ss.SpeedSensorTypeId);
+
+                    double warningLow = ss.WarningLowSpeed;
+                    double warningHigh = ss.WarningHighSpeed;
+                    double rangeMin = sst.RangeMin;
+                    double rangeMax = sst.RangeMax;
+
+                    DateTime currentTime = dt;
+
+                    //1500 records to be generated
+                    for (int j = 0; j < 1500; j++)
+                    {
+                        double rndValue = GetRndValue(warningHigh);
+
+                        var status = CheckSpeedSensorStatus(rndValue, warningLow, warningHigh, rangeMin, rangeMax);
+
+                        SpeedSensorData newMeasurement = new SpeedSensorData()
+                        {
+                            SpeedSensorId = sensorId,
+                            Speed = rndValue,
+                            DTCollected = currentTime,
+                            Status = status
+                        };
+                        measurements.Add(newMeasurement);
+
+                        currentTime = currentTime.AddMinutes(1);
+                    }
+
+                    ctx.SpeedSensorDatas.AddRange(measurements);
+                    ctx.SaveChanges();
+                }
+            }
+        }
+
+        public static void FillTensionSensors()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                DateTime dt = DateTime.Now;
+                int tensionSensorsCount = ctx.TensionSensors.Count();
+                int[] tensionIdArray = ctx.TensionSensors.Select(i => i.Id).ToArray();
+
+                foreach (var sensorId in tensionIdArray)
+                {
+                    Console.WriteLine($"Seed data for tension sensor {sensorId} of {tensionSensorsCount}");
+
+                    List<TensionSensorData> measurements = new List<TensionSensorData>();
+
+                    var ts = ctx.TensionSensors.Find(sensorId);
+                    var tst = ctx.TensionSensorTypes.Find(ts.TensionSensorTypeId);
+
+                    double warningLow = ts.WarningLowTension;
+                    double warningHigh = ts.WarningHighTension;
+                    double emergencyHigh = ts.WarningEmergencyHighTension;
+                    double rangeMin = tst.RangeMin;
+                    double rangeMax = tst.RangeMax;
+
+                    DateTime currentTime = dt;
+
+                    //1500 records to be generated
+                    for (int j = 0; j < 1500; j++)
+                    {
+                        double rndValue = GetRndValue(emergencyHigh);
+
+                        var status = CheckTensionSensorStatus(rndValue, warningLow, warningHigh, emergencyHigh, rangeMin, rangeMax);
+
+                        TensionSensorData newMeasurement = new TensionSensorData()
+                        {
+                            TensionSensorId = sensorId,
+                            Tension = rndValue,
+                            DTCollected = currentTime,
+                            Status = status
+                        };
+                        measurements.Add(newMeasurement);
+
+                        currentTime = currentTime.AddMinutes(1);
+                    }
+
+                    ctx.TensionSensorDatas.AddRange(measurements);
+                    ctx.SaveChanges();
+                }
+            }
+        }
+
+
+
+        private static int CheckSensorStatus(double value, double warningHigh, double emergencyHigh, double rangeMin, double rangeMax)
+        {
+            if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
             {
                 return 64;
             }
-            if (emergencyHigh > 0 && current > emergencyHigh)
+            if (emergencyHigh > 0 && value > emergencyHigh)
             {
                 return 16;
             }
-            if (warningHigh > 0 && current > warningHigh)
+            if (warningHigh > 0 && value > warningHigh)
             {
                 return 8;
             }
             return 1;
         }
+
+
+        private static int CheckSpeedSensorStatus(double value, double warningLow, double warningHigh, double rangeMin, double rangeMax)
+        {
+            if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
+            {
+                return 64;
+            }
+            if (warningHigh > warningLow && value > warningHigh)
+            {
+                return 8;
+            }
+            if (value < warningLow)
+            {
+                return 2;
+            }
+
+            return 1;
+        }
+
+
+        private static int CheckTensionSensorStatus(double value, double warningLow, double warningHigh, double emergencyHigh, double rangeMin, double rangeMax)
+        {
+            if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
+            {
+                return 64;
+            }
+            if (emergencyHigh > 0 && value > emergencyHigh)
+            {
+                return 16;
+            }
+            if (warningHigh > 0 && value > warningHigh)
+            {
+                return 8;
+            }
+            if (value < warningLow)
+            {
+                return 2;
+            }
+
+            return 1;
+        }
+
+
 
         static double GetRndValue(double emergencyHigh)
         {
@@ -137,12 +280,6 @@
 
             return range * next;
         }
-
-
-
-
-
-
 
     }
 }

@@ -78,7 +78,7 @@
                 var currentWarningsDto = new List<CurrentWarningsDto>();
 
                 var csdPrepare = ctx.CurrentSensorDatas
-                    .Include("TempSensor")
+                    .Include("CurrentSensor")
                     .Select(s => new
                     {
                         s.DTCollected,
@@ -127,6 +127,128 @@
             }
         }
 
+
+        public static void SetDataToSpeedDtos()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                Console.WriteLine("Set Data to Speed DTOs...");
+                var speedAllDto = new List<SpeedAllDto>();
+                var speedWarningsDto = new List<SpeedWarningsDto>();
+
+                var ssdPrepare = ctx.SpeedSensorDatas
+                    .Include("SpeedSensor")
+                    .Select(s => new
+                    {
+                        s.DTCollected,
+                        s.Speed,
+                        s.SpeedSensorId,
+                        Description = s.SpeedSensor.Description,
+                        s.Status
+                    });
+
+                var val = new SpeedAllDto();
+                var valW = new SpeedWarningsDto();
+
+                foreach (var item in ssdPrepare)
+                {
+                    val.SensorName = $"SpeedSensor {item.SpeedSensorId} - {item.Description}";
+                    val.Speed = $"{item.Speed:F2} m/s";
+                    val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
+                    speedAllDto.Add(val);
+
+                    if (item.Status > 1)
+                    {
+                        valW.SensorName = val.SensorName;
+                        valW.Speed = val.Speed;
+                        valW.TimeCollected = val.TimeCollected;
+                        valW.Warning = "";
+
+                        switch (item.Status)
+                        {
+                            case 2:
+                                valW.Warning = "Too Low Speed!";
+                                break;
+                            case 8:
+                                valW.Warning = "Too High Speed!";
+                                break;
+                            case 64:
+                                valW.Warning = "The sensor is damaged or the connection with him is interrupted!";
+                                break;
+                        }
+
+                        speedWarningsDto.Add(valW);
+                    }
+                }
+                Console.WriteLine($"Records in speedAllDto : {speedAllDto.Count}");
+                Console.WriteLine($"Records in speedWarningsDto : {speedWarningsDto.Count}");
+                Console.WriteLine();
+            }
+
+        }
+
+
+        public static void SetDataToTensionDtos()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                Console.WriteLine("Set Data to Tension DTOs...");
+                var tensionAllDto = new List<TensionAllDto>();
+                var tensionWarningsDto = new List<TensionWarningsDto>();
+
+                var tsdPrepare = ctx.TensionSensorDatas
+                    .Include("TensionSensor")
+                    .Select(s => new
+                    {
+                        s.DTCollected,
+                        s.Tension,
+                        s.TensionSensorId,
+                        Description = s.TensionSensor.Description,
+                        s.Status
+                    });
+
+                var val = new TensionAllDto();
+                var valW = new TensionWarningsDto();
+
+                foreach (var item in tsdPrepare)
+                {
+                    val.SensorName = $"TensionSensor {item.TensionSensorId} - {item.Description}";
+                    val.Tension = $"{item.Tension:F3} t";
+                    val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
+                    tensionAllDto.Add(val);
+
+                    if (item.Status > 1)
+                    {
+                        valW.SensorName = val.SensorName;
+                        valW.Tension = val.Tension;
+                        valW.TimeCollected = val.TimeCollected;
+                        valW.Warning = "";
+
+                        switch (item.Status)
+                        {
+                            case 2:
+                                valW.Warning = "Too Low Tension - danger of slippage!";
+                                break;
+                            case 8:
+                                valW.Warning = "Too High Tension!";
+                                break;
+                            case 16:
+                                valW.Warning = "Emergency High Tension - risk of accident!";
+                                break;
+                            case 64:
+                                valW.Warning = "The sensor is damaged or the connection with him is interrupted!";
+                                break;
+                        }
+
+                        tensionWarningsDto.Add(valW);
+                    }
+                }
+                Console.WriteLine($"Records in tensionAllDto : {tensionAllDto.Count}");
+                Console.WriteLine($"Records in tensionWarningsDto : {tensionWarningsDto.Count}");
+                Console.WriteLine();
+            }
+
+        }
 
 
     }

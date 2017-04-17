@@ -1,7 +1,5 @@
 ﻿namespace Excavators.Models.DTO
 {
-    using System;
-
     public class TempAllDto
     {
         public string SensorName { get; set; }
