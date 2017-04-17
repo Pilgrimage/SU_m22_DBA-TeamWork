@@ -21,6 +21,6 @@
         // 64 => Sensor Failed (compared with SpeedSensorType.RangeMin and SpeedSensorType.RangeMax)
 
         public int SpeedSensorId { get; set; }
-        public SpeedSensor SpeedSensor { get; set; }
+        public virtual SpeedSensor SpeedSensor { get; set; }
     }   
 }

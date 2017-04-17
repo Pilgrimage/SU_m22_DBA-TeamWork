@@ -18,7 +18,7 @@
 
         [Required]
         public int TempSensorTypeId { get; set; }
-        public TempSensorType TempSensorType { get; set; }
+        public virtual TempSensorType TempSensorType { get; set; }
 
         [StringLength(250)]
         public string Description { get; set; }

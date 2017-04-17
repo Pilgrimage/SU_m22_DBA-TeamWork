@@ -18,7 +18,7 @@
 
         [Required]
         public int TensionSensorTypeId { get; set; }
-        public TensionSensorType TensionSensorType { get; set; }
+        public virtual TensionSensorType TensionSensorType { get; set; }
         
         [StringLength(250)]
         public string Description { get; set; }

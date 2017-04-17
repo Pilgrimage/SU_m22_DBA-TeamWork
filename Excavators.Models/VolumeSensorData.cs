@@ -19,7 +19,7 @@
         // 64 => Sensor Failed (compared with VolumeSensorType.RangeMin and VolumeSensorType.RangeMax)
 
         public int VolumeSensorId { get; set; }
-        public VolumeSensor VolumeSensor { get; set; }
+        public virtual VolumeSensor VolumeSensor { get; set; }
 
     }
 }

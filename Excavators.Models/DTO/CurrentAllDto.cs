@@ -5,7 +5,7 @@
     public class CurrentAllDto
     {
         public string SensorName { get; set; }
-        public double Current { get; set; }
-        public DateTime TimeCollected { get; set; }
+        public string Current { get; set; }
+        public string TimeCollected { get; set; }
     }
 }

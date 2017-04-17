@@ -21,7 +21,7 @@
 
 
         public int TempSensorId { get; set; }
-        public TempSensor TempSensor { get; set; }
+        public virtual TempSensor TempSensor { get; set; }
 
     }
 }

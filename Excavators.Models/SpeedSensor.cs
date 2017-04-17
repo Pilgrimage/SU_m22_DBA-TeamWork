@@ -18,7 +18,7 @@
 
         [Required]
         public int SpeedSensorTypeId { get; set; }
-        public SpeedSensorType SppedSensorType { get; set; }
+        public virtual SpeedSensorType SppedSensorType { get; set; }
 
         [StringLength(250)]
         public string Description { get; set; }

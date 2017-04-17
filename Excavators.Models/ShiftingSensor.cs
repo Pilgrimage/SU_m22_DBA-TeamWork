@@ -18,7 +18,7 @@
         
         [Required]
         public int ShiftingSensorTypeId { get; set; }
-        public ShiftingSensorType ShiftingSensorType { get; set; }
+        public virtual ShiftingSensorType ShiftingSensorType { get; set; }
         
         [StringLength(250)]
         public string Description { get; set; }

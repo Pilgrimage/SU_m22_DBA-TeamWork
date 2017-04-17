@@ -1,4 +1,5 @@
-﻿using Excavators.Data.SeedSensorDatas;
+﻿using System;
+using Excavators.Data.SeedSensorDatas;
 
 namespace Excavators.Client
 {
@@ -54,11 +55,28 @@ namespace Excavators.Client
 
 
             // Seed measurement's Values
+            using (var ctx = new ExcavatorsContext())
+            {
+                if (!ctx.TempSensorDatas.Any())
+                {
+                    SeedMeasurementDatas.FillTempSensors();
+                    SetDataToDto.SetDataToTempDtos();
+                    // There are tables (objects): 
+                    // tempAllDto as List<TempAllDto>
+                    // tempWarningsDto as List<TempWarningsDto>
+                }
 
-            SeedCurrentData.FillCurrentSensors();
+                if (!ctx.CurrentSensorDatas.Any())
+                {
+                    SeedMeasurementDatas.FillCurrentSensors();
+                    SetDataToDto.SetDataToCurrentDtos();
+                    // There are tables (objects): 
+                    // currentAllDto as List<CurrentAllDto>
+                    // currentWarningsDto as List<CurrentWarningsDto>
+                }
 
 
-
+            }
         }
 }
 }

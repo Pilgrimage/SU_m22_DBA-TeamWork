@@ -19,6 +19,6 @@
 
 
         public int ShiftingSensorId { get; set; }
-        public ShiftingSensor ShiftingSensor { get; set; }
+        public virtual ShiftingSensor ShiftingSensor { get; set; }
     }
 }

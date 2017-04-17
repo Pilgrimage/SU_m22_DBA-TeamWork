@@ -22,7 +22,7 @@
 
 
         public int TensionSensorId { get; set; }
-        public TensionSensor TensionSensor { get; set; }
+        public virtual TensionSensor TensionSensor { get; set; }
 
     }
 }

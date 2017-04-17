@@ -18,7 +18,7 @@
         
         [Required]
         public int VolumeSensorTypeId { get; set; }
-        public VolumeSensorType VolumeSensorType { get; set; }
+        public virtual VolumeSensorType VolumeSensorType { get; set; }
 
         [StringLength(250)]
         public string Description { get; set; }

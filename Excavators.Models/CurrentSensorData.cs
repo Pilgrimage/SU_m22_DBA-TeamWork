@@ -21,7 +21,7 @@
         // 64 => Sensor Failed (compared with CurrentSensorType.RangeMin and CurrentSensorType.RangeMax)
 
         public int CurrentSensorId { get; set; }
-        public CurrentSensor CurrentSensor { get; set; }
+        public virtual CurrentSensor CurrentSensor { get; set; }
 
     }
 }
