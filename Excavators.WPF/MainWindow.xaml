@@ -14,19 +14,20 @@
                         <ColumnDefinition Width="93*"/>
                         <ColumnDefinition Width="688*"/>
                     </Grid.ColumnDefinitions>
-                    <RadioButton Content="All values" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <RadioButton Content="Only warnings" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <Button Content="Temperatures" HorizontalAlignment="Left" Margin="40.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
-                    <Button Content="Currents" HorizontalAlignment="Left" Margin="170.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
-                    <Button Content="Speeds" HorizontalAlignment="Left" Margin="300.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
-                    <Button Content="Tensions" HorizontalAlignment="Left" Margin="430.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
-                    <Button Content="Volumes" HorizontalAlignment="Left" Margin="560.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
+                    <RadioButton x:Name="RadioButtonAllValues" Content="All values" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <RadioButton x:Name="RadioButtonOnlyWarnings" Content="Only warnings" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Button x:Name="ButtonTemperatures" Content="Temperatures" HorizontalAlignment="Left" Margin="40.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonTemperatures_Click"/>
+                    <Button x:Name="ButtonCurrents" Content="Currents" HorizontalAlignment="Left" Margin="170.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonCurrents_Click"/>
+                    <Button x:Name="ButtonSpeeds" Content="Speeds" HorizontalAlignment="Left" Margin="300.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonSpeeds_Click"/>
+                    <Button x:Name="ButtonTensions" Content="Tensions" HorizontalAlignment="Left" Margin="430.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonTensions_Click"/>
+                    <Button x:Name="ButtonVolumes" Content="Volumes" HorizontalAlignment="Left" Margin="560.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonVolumes_Click"/>
                     <ListView HorizontalAlignment="Left" Height="463" Margin="10,51,0,0" VerticalAlignment="Top" Width="761" Grid.ColumnSpan="2">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
                             </GridView>
                         </ListView.View>
+                        <TextBox x:Name="textBox" Height="405" TextWrapping="Wrap" Text="TextBox" Width="739" RenderTransformOrigin="0.51,0.511"/>
                     </ListView>
                 </Grid>
             </TabItem>
