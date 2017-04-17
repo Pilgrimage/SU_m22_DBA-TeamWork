@@ -251,5 +251,111 @@
         }
 
 
+        public static void SetDataToVolumeDtos()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                Console.WriteLine("Set Data to Volume DTOs...");
+                var volumeAllDto = new List<VolumeAllDto>();
+                var volumeWarningsDto = new List<VolumeWarningsDto>();
+
+                var vsdPrepare = ctx.VolumeSensorDatas
+                    .Include("VolumeSensor")
+                    .Select(s => new
+                    {
+                        s.DTCollected,
+                        s.Volume,
+                        s.VolumeSensorId,
+                        Description = s.VolumeSensor.Description,
+                        s.Status
+                    });
+
+                var val = new VolumeAllDto();
+                var valW = new VolumeWarningsDto();
+
+                foreach (var item in vsdPrepare)
+                {
+                    val.SensorName = $"VolumeSensor {item.VolumeSensorId} - {item.Description}";
+                    val.Volume = $"{item.Volume:F3} m³/hour";
+                    val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
+                    volumeAllDto.Add(val);
+
+                    if (item.Status > 1)
+                    {
+                        valW.SensorName = val.SensorName;
+                        valW.Volume = val.Volume;
+                        valW.TimeCollected = val.TimeCollected;
+                        valW.Warning = "";
+
+                        switch (item.Status)
+                        {
+                            case 64:
+                                valW.Warning = "The sensor is damaged or the connection with him is interrupted!";
+                                break;
+                        }
+
+                        volumeWarningsDto.Add(valW);
+                    }
+                }
+                Console.WriteLine($"Records in volumeAllDto : {volumeAllDto.Count}");
+                Console.WriteLine($"Records in volumeWarningsDto : {volumeWarningsDto.Count}");
+                Console.WriteLine();
+            }
+        }
+
+
+        public static void SetDataToShiftingDtos()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                Console.WriteLine("Set Data to Shifting DTOs...");
+                var shiftingAllDto = new List<ShiftingAllDto>();
+                var shiftingWarningsDto = new List<ShiftingWarningsDto>();
+
+                var ssdPrepare = ctx.ShiftingSensorDatas
+                    .Include("ShiftingSensor")
+                    .Select(s => new
+                    {
+                        s.DTCollected,
+                        s.IsShifted,
+                        s.ShiftingSensorId,
+                        Description = s.ShiftingSensor.Description,
+                        s.Status
+                    });
+
+                var val = new ShiftingAllDto();
+                var valW = new ShiftingWarningsDto();
+
+                foreach (var item in ssdPrepare)
+                {
+                    val.SensorName = $"ShiftingSensor {item.ShiftingSensorId} - {item.Description}";
+                    val.IsShifted = item.IsShifted ? "Belt is shifted!" : "Belt is OK" ;
+                    val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
+                    shiftingAllDto.Add(val);
+
+                    if (item.Status > 1)
+                    {
+                        valW.SensorName = val.SensorName;
+                        valW.IsShifted = val.IsShifted;
+                        valW.TimeCollected = val.TimeCollected;
+                        valW.Warning = "";
+
+                        switch (item.Status)
+                        {
+                            case 128:
+                                valW.Warning = "Attention: the belt is shifted and can be damaged!";
+                                break;
+                        }
+
+                        shiftingWarningsDto.Add(valW);
+                    }
+                }
+                Console.WriteLine($"Records in shiftingAllDto : {shiftingAllDto.Count}");
+                Console.WriteLine($"Records in shiftingWarningsDto : {shiftingWarningsDto.Count}");
+                Console.WriteLine();
+            }
+
+        }
+
     }
 }

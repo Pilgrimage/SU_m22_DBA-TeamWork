@@ -55,65 +55,64 @@ namespace Excavators.Client
             };
 
 
-            // Seed measurement's Values
+            // Seed measured Values and create DTO objects
             using (var ctx = new ExcavatorsContext())
             {
                 if (!ctx.TempSensorDatas.Any())
                 {
                     SeedMeasurementDatas.FillTempSensors();
-                    SetDataToDto.SetDataToTempDtos();
-                    // There are two tables (objects): 
-                    // tempAllDto as List<TempAllDto>
-                    // tempWarningsDto as List<TempWarningsDto>
                 }
+                SetDataToDto.SetDataToTempDtos();
+                // There are two tables (objects): 
+                // tempAllDto as List<TempAllDto>
+                // tempWarningsDto as List<TempWarningsDto>
 
                 if (!ctx.CurrentSensorDatas.Any())
                 {
                     SeedMeasurementDatas.FillCurrentSensors();
-                    SetDataToDto.SetDataToCurrentDtos();
-                    // There are two tables (objects): 
-                    // currentAllDto as List<CurrentAllDto>
-                    // currentWarningsDto as List<CurrentWarningsDto>
                 }
+                SetDataToDto.SetDataToCurrentDtos();
+                // There are two tables (objects): 
+                // currentAllDto as List<CurrentAllDto>
+                // currentWarningsDto as List<CurrentWarningsDto>
 
                 if (!ctx.SpeedSensorDatas.Any())
                 {
                     SeedMeasurementDatas.FillSpeedSensors();
-                    SetDataToDto.SetDataToSpeedDtos();
-                    // There are two tables (objects): 
-                    // speedAllDto as List<SpeedAllDto>
-                    // speedWarningsDto as List<SpeedWarningsDto>
                 }
+                SetDataToDto.SetDataToSpeedDtos();
+                // There are two tables (objects): 
+                // speedAllDto as List<SpeedAllDto>
+                // speedWarningsDto as List<SpeedWarningsDto>
 
                 if (!ctx.TensionSensorDatas.Any())
                 {
                     SeedMeasurementDatas.FillTensionSensors();
-                    SetDataToDto.SetDataToTensionDtos();
-                    // There are two tables (objects): 
-                    // tensionAllDto as List<TensionAllDto>
-                    // tensionWarningsDto as List<TensionWarningsDto>
                 }
+                SetDataToDto.SetDataToTensionDtos();
+                // There are two tables (objects): 
+                // tensionAllDto as List<TensionAllDto>
+                // tensionWarningsDto as List<TensionWarningsDto>
 
                 if (!ctx.VolumeSensorDatas.Any())
                 {
-                    //SeedMeasurementDatas.FillTensionSensors();
-                    //SetDataToDto.SetDataToTensionDtos();
-                    //// There are two tables (objects): 
-                    //// tensionAllDto as List<TensionAllDto>
-                    //// tensionWarningsDto as List<TensionWarningsDto>
+                    SeedMeasurementDatas.FillVolumeSensors();
                 }
+                SetDataToDto.SetDataToVolumeDtos();
+                // There are two tables (objects): 
+                // volumeAllDto as List<volumeAllDto>
+                // volumeWarningsDto as List<VolumeWarningsDto>
 
                 if (!ctx.ShiftingSensorDatas.Any())
                 {
-                    //SeedMeasurementDatas.FillTensionSensors();
-                    //SetDataToDto.SetDataToTensionDtos();
-                    //// There are two tables (objects): 
-                    //// tensionAllDto as List<TensionAllDto>
-                    //// tensionWarningsDto as List<TensionWarningsDto>
+                    SeedMeasurementDatas.FillShiftingSensors();
                 }
-
+                SetDataToDto.SetDataToShiftingDtos();
+                // There are two tables (objects): 
+                // shiftingAllDto as List<ShiftingAllDto>
+                // shiftingWarningsDto as List<shiftingWarningsDto>
 
             }
         }
-}
+    }
 }

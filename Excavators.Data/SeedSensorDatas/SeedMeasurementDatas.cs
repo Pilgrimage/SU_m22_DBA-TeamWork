@@ -10,8 +10,7 @@
 
         static Random excavatorRandom = new Random();
 
-
-
+        
         public static void FillTempSensors()
         {
             using (var ctx = new ExcavatorsContext())
@@ -190,7 +189,7 @@
                     {
                         double rndValue = GetRndValue(emergencyHigh);
 
-                        var status = CheckTensionSensorStatus(rndValue, warningLow, warningHigh, emergencyHigh, rangeMin, rangeMax);
+                        var status = CheckSensorStatus(rndValue, warningLow, warningHigh, emergencyHigh, rangeMin, rangeMax);
 
                         TensionSensorData newMeasurement = new TensionSensorData()
                         {
@@ -211,7 +210,110 @@
         }
 
 
+        public static void FillVolumeSensors()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                DateTime dt = DateTime.Now;
+                int volumeSensorsCount = ctx.VolumeSensors.Count();
+                int[] volumeIdArray = ctx.VolumeSensors.Select(i => i.Id).ToArray();
 
+                foreach (var sensorId in volumeIdArray)
+                {
+                    Console.WriteLine($"Seed data for volume sensor {sensorId} of {volumeSensorsCount}");
+
+                    List<VolumeSensorData> measurements = new List<VolumeSensorData>();
+
+                    var vs = ctx.VolumeSensors.Find(sensorId);
+                    var vst = ctx.VolumeSensorTypes.Find(vs.VolumeSensorTypeId);
+
+                    double rangeMin = vst.RangeMin;
+                    double rangeMax = vst.RangeMax;
+
+                    DateTime currentTime = dt;
+
+                    //1500 records to be generated
+                    for (int j = 0; j < 1500; j++)
+                    {
+                        double rndValue = GetRndValue(rangeMax*0.7);
+
+                        var status = CheckSensorStatus(rndValue, rangeMin, rangeMax);
+
+                        VolumeSensorData newMeasurement = new VolumeSensorData()
+                        {
+                            VolumeSensorId = sensorId,
+                            Volume = rndValue,
+                            DTCollected = currentTime,
+                            Status = status
+                        };
+                        measurements.Add(newMeasurement);
+
+                        currentTime = currentTime.AddMinutes(1);
+                    }
+
+                    ctx.VolumeSensorDatas.AddRange(measurements);
+                    ctx.SaveChanges();
+                }
+            }
+        }
+
+
+        public static void FillShiftingSensors()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                DateTime dt = DateTime.Now;
+                int shiftingSensorsCount = ctx.ShiftingSensors.Count();
+                int[] shiftingIdArray = ctx.ShiftingSensors.Select(i => i.Id).ToArray();
+
+                foreach (var sensorId in shiftingIdArray)
+                {
+                    Console.WriteLine($"Seed data for shifting sensor {sensorId} of {shiftingSensorsCount}");
+
+                    List<ShiftingSensorData> measurements = new List<ShiftingSensorData>();
+
+                    var ss = ctx.ShiftingSensors.Find(sensorId);
+
+                    DateTime currentTime = dt;
+
+                    //1500 records to be generated
+                    for (int j = 0; j < 1500; j++)
+                    {
+                        double rndValue = GetRndValue(0.65);
+
+                        bool isShiftedValue = (rndValue > 0.8);
+                        int status = isShiftedValue ? 128 : 1;
+
+                        ShiftingSensorData newMeasurement = new ShiftingSensorData()
+                        {
+                            ShiftingSensorId = sensorId,
+                            IsShifted = isShiftedValue,
+                            DTCollected = currentTime,
+                            Status = status
+                        };
+
+                        measurements.Add(newMeasurement);
+
+                        currentTime = currentTime.AddMinutes(1);
+                    }
+
+                    ctx.ShiftingSensorDatas.AddRange(measurements);
+                    ctx.SaveChanges();
+                }
+            }
+
+        }
+
+
+        private static int CheckSensorStatus(double value, double rangeMin, double rangeMax)
+        {
+            if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
+            {
+                return 64;
+            }
+            return 1;
+        }
+        
         private static int CheckSensorStatus(double value, double warningHigh, double emergencyHigh, double rangeMin, double rangeMax)
         {
             if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
@@ -229,6 +331,27 @@
             return 1;
         }
 
+        private static int CheckSensorStatus(double value, double warningLow, double warningHigh, double emergencyHigh, double rangeMin, double rangeMax)
+        {
+            if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
+            {
+                return 64;
+            }
+            if (emergencyHigh > 0 && value > emergencyHigh)
+            {
+                return 16;
+            }
+            if (warningHigh > 0 && value > warningHigh)
+            {
+                return 8;
+            }
+            if (value < warningLow)
+            {
+                return 2;
+            }
+
+            return 1;
+        }
 
         private static int CheckSpeedSensorStatus(double value, double warningLow, double warningHigh, double rangeMin, double rangeMax)
         {
@@ -247,30 +370,6 @@
 
             return 1;
         }
-
-
-        private static int CheckTensionSensorStatus(double value, double warningLow, double warningHigh, double emergencyHigh, double rangeMin, double rangeMax)
-        {
-            if ((rangeMax > 0 && value > rangeMax) || value < rangeMin)
-            {
-                return 64;
-            }
-            if (emergencyHigh > 0 && value > emergencyHigh)
-            {
-                return 16;
-            }
-            if (warningHigh > 0 && value > warningHigh)
-            {
-                return 8;
-            }
-            if (value < warningLow)
-            {
-                return 2;
-            }
-
-            return 1;
-        }
-
 
 
         static double GetRndValue(double emergencyHigh)

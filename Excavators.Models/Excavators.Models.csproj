@@ -48,6 +48,8 @@
     <Compile Include="Drum.cs" />
     <Compile Include="DTO\CurrentAllDto.cs" />
     <Compile Include="DTO\CurrentWarningsDto.cs" />
+    <Compile Include="DTO\ShiftingAllDto.cs" />
+    <Compile Include="DTO\ShiftingWarningsDto.cs" />
     <Compile Include="DTO\SpeedAllDto.cs" />
     <Compile Include="DTO\SpeedWarningsDto.cs" />
     <Compile Include="DTO\TempAllDto.cs" />

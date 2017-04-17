@@ -15,7 +15,7 @@
         public int Status { get; set; }
         // 0 -> means nothing
         // 1 => checked succesfully, OK
-        // 64 => Sensor Failed (if it's null)
+        // 128 => Sensor value is true, belt is shifted
 
 
         public int ShiftingSensorId { get; set; }
