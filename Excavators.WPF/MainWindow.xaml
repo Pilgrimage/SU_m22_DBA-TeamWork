@@ -10,14 +10,18 @@
         <TabControl HorizontalAlignment="Left" Height="550" VerticalAlignment="Top" Width="784" Margin="0,10,0,0">
             <TabItem Header="Data in tables" Margin="-2,-2,-70.2,0">
                 <Grid Background="#FFE5E5E5" Margin="-2,-2,-0.6,0.4" RenderTransformOrigin="0.426,0.225">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="93*"/>
+                        <ColumnDefinition Width="688*"/>
+                    </Grid.ColumnDefinitions>
                     <RadioButton Content="All values" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <RadioButton Content="Only warnings" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top"/>
-                    <Button Content="Temperatures" HorizontalAlignment="Left" Margin="134,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30"/>
-                    <Button Content="Currents" HorizontalAlignment="Left" Margin="264,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30"/>
-                    <Button Content="Spreeds" HorizontalAlignment="Left" Margin="394,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30"/>
-                    <Button Content="Tensions" HorizontalAlignment="Left" Margin="524,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30"/>
-                    <Button Content="Volumes" HorizontalAlignment="Left" Margin="654,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30"/>
-                    <ListView HorizontalAlignment="Left" Height="463" Margin="10,51,0,0" VerticalAlignment="Top" Width="761">
+                    <RadioButton Content="Only warnings" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Button Content="Temperatures" HorizontalAlignment="Left" Margin="40.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
+                    <Button Content="Currents" HorizontalAlignment="Left" Margin="170.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
+                    <Button Content="Speeds" HorizontalAlignment="Left" Margin="300.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
+                    <Button Content="Tensions" HorizontalAlignment="Left" Margin="430.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
+                    <Button Content="Volumes" HorizontalAlignment="Left" Margin="560.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1"/>
+                    <ListView HorizontalAlignment="Left" Height="463" Margin="10,51,0,0" VerticalAlignment="Top" Width="761" Grid.ColumnSpan="2">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
