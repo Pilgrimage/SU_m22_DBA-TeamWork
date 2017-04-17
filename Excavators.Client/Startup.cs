@@ -1,12 +1,10 @@
-﻿using System;
-using Excavators.Data.SeedSensorDatas;
-
-namespace Excavators.Client
+﻿namespace Excavators.Client
 {
-    using Excavators.Data;
-    using Excavators.Models;
-    using Excavators.Data.ImportExcavators;
     using System.Linq;
+    using Excavators.Data;
+    using Excavators.Data.ImportExcavators;
+    using Excavators.Data.SeedSensorDatas;
+
 
     class Startup
     {

@@ -1,4 +1,6 @@
-﻿namespace Excavators.Data.SeedSensorDatas
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Excavators.Data.SeedSensorDatas
 {
     using System;
     using System.Collections.Generic;
@@ -68,7 +70,6 @@
 
         }
 
-
         public static void SetDataToCurrentDtos()
         {
             using (var ctx = new ExcavatorsContext())
@@ -126,7 +127,6 @@
                 Console.WriteLine();
             }
         }
-
 
         public static void SetDataToSpeedDtos()
         {
@@ -186,7 +186,6 @@
             }
 
         }
-
 
         public static void SetDataToTensionDtos()
         {
@@ -250,7 +249,6 @@
 
         }
 
-
         public static void SetDataToVolumeDtos()
         {
             using (var ctx = new ExcavatorsContext())
@@ -303,7 +301,6 @@
             }
         }
 
-
         public static void SetDataToShiftingDtos()
         {
             using (var ctx = new ExcavatorsContext())
@@ -329,7 +326,7 @@
                 foreach (var item in ssdPrepare)
                 {
                     val.SensorName = $"ShiftingSensor {item.ShiftingSensorId} - {item.Description}";
-                    val.IsShifted = item.IsShifted ? "Belt is shifted!" : "Belt is OK" ;
+                    val.IsShifted = item.IsShifted ? "Belt is shifted!" : "Belt is OK";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
                     shiftingAllDto.Add(val);
 
@@ -355,6 +352,26 @@
                 Console.WriteLine();
             }
 
+        }
+
+
+        public static List<CurrentGrafDto> GetCurrentDataById(int currentId)
+        {
+            List<CurrentGrafDto> currentGrafDtos = new List<CurrentGrafDto>();
+
+            using (var ctx = new ExcavatorsContext())
+            {
+                var qwerty = ctx.CurrentSensorDatas
+                    .Where(s => s.CurrentSensorId == currentId)
+                    .Select(s => new CurrentGrafDto
+                    {
+                        Time = s.DTCollected,
+                        Current = s.Current
+
+                    });
+            }
+
+            return currentGrafDtos;
         }
 
     }
