@@ -34,15 +34,14 @@ namespace Excavators.WPF
             {
                 var json = File.ReadAllText("../../../ExportJson/tempAllDto.json");
                 var tempAll = JsonConvert.DeserializeObject<IEnumerable<TempAllDto>>(json);
-                foreach (var tempAllDto in tempAll)
-                {
-                    textBox.Text = tempAllDto.SensorName;
-                }
-                
+                dataGrid.ItemsSource= tempAll.Take(500);
+
             }
             else if (RadioButtonOnlyWarnings.IsChecked==true)
             {
-                textBox.Text = "Temperatures Only Warnings: Import from Database Temperatures Only Warnings";
+                var json = File.ReadAllText("../../../ExportJson/tempWarningsDto.json");
+                var tempWarnings = JsonConvert.DeserializeObject<IEnumerable<TempWarningsDto>>(json);
+                dataGrid.ItemsSource = tempWarnings.Take(500);
             }
         }
 
@@ -50,11 +49,15 @@ namespace Excavators.WPF
         {
             if (RadioButtonAllValues.IsChecked == true)
             {
-                textBox.Text = "Currents All Value:Import from Database Currents All Value";
+                var json = File.ReadAllText("../../../ExportJson/currentAllDto.json");
+                var currentAll = JsonConvert.DeserializeObject<IEnumerable<CurrentAllDto>>(json);
+                dataGrid.ItemsSource = currentAll.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
-                textBox.Text = "Currents Only Warnings:Import from Database Currents Only Warnings";
+                var json = File.ReadAllText("../../../ExportJson/currentWarningsDto.json");
+                var currentWarnings = JsonConvert.DeserializeObject<IEnumerable<CurrentWarningsDto>>(json);
+                dataGrid.ItemsSource = currentWarnings.Take(500);
             }
         }
 
@@ -62,11 +65,15 @@ namespace Excavators.WPF
         {
             if (RadioButtonAllValues.IsChecked == true)
             {
-                textBox.Text = "Speeds All Value:Import from Database Speeds All Value";
+                var json = File.ReadAllText("../../../ExportJson/speedAllDto.json");
+                var speedAll = JsonConvert.DeserializeObject<IEnumerable<SpeedAllDto>>(json);
+                dataGrid.ItemsSource = speedAll.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
-                textBox.Text = "Speeds Only Warnings:Import from Database Speeds Only Warnings";
+                var json = File.ReadAllText("../../../ExportJson/speedWarningsDto.json");
+                var speedWarnings = JsonConvert.DeserializeObject<IEnumerable<SpeedWarningsDto>>(json);
+                dataGrid.ItemsSource = speedWarnings.Take(500);
             }
         }
 
@@ -74,11 +81,15 @@ namespace Excavators.WPF
         {
             if (RadioButtonAllValues.IsChecked == true)
             {
-                textBox.Text = "Tensions All Value:Import from Database Tensions All Value";
+                var json = File.ReadAllText("../../../ExportJson/tensionAllDto.json");
+                var tensionAll = JsonConvert.DeserializeObject<IEnumerable<TensionAllDto>>(json);
+                dataGrid.ItemsSource = tensionAll.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
-                textBox.Text = "Tensions Only Warnings:Import from Database Tensions Only Warnings";
+                var json = File.ReadAllText("../../../ExportJson/tensionWarningsDto.json");
+                var tensionWarnings = JsonConvert.DeserializeObject<IEnumerable<TensionWarningsDto>>(json);
+                dataGrid.ItemsSource = tensionWarnings.Take(500);
             }
         }
 
@@ -86,12 +97,21 @@ namespace Excavators.WPF
         {
             if (RadioButtonAllValues.IsChecked == true)
             {
-                textBox.Text = "Volumes All Value:Import from Database Volumes All Value";
+                var json = File.ReadAllText("../../../ExportJson/volumeAllDto.json");
+                var volumeAll = JsonConvert.DeserializeObject<IEnumerable<VolumeAllDto>>(json);
+                dataGrid.ItemsSource = volumeAll.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
-                textBox.Text = "Volumes Only Warnings:Import from Database Volumes Only Warnings";
+                var json = File.ReadAllText("../../../ExportJson/volumeWarningsDto.json");
+                var volumeWarnings = JsonConvert.DeserializeObject<IEnumerable<VolumeWarningsDto>>(json);
+                dataGrid.ItemsSource = volumeWarnings.Take(500);
             }
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

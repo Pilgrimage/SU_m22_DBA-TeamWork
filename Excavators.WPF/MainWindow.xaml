@@ -21,14 +21,7 @@
                     <Button x:Name="ButtonSpeeds" Content="Speeds" HorizontalAlignment="Left" Margin="300.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonSpeeds_Click"/>
                     <Button x:Name="ButtonTensions" Content="Tensions" HorizontalAlignment="Left" Margin="430.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonTensions_Click"/>
                     <Button x:Name="ButtonVolumes" Content="Volumes" HorizontalAlignment="Left" Margin="560.6,16,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="-0.277,0.932" Height="30" Grid.Column="1" Click="ButtonVolumes_Click"/>
-                    <ListView HorizontalAlignment="Left" Height="463" Margin="10,51,0,0" VerticalAlignment="Top" Width="761" Grid.ColumnSpan="2">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                        <TextBox x:Name="textBox" Height="405" TextWrapping="Wrap" Text="TextBox" Width="739" RenderTransformOrigin="0.51,0.511"/>
-                    </ListView>
+                    <DataGrid HorizontalAlignment="Left" x:Name="dataGrid" Height="463" Margin="10,51,0,0" VerticalAlignment="Top" Width="761" Grid.ColumnSpan="2" AutoGenerateColumns="True"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Data in graph" Margin="70.3,-2,-140.5,0">
