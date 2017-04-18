@@ -111,6 +111,8 @@
                 // shiftingWarningsDto as List<shiftingWarningsDto>
 
             }
+
+            var proba = SetDataToDto.GetCurrentDataById(1);
         }
     }
 }

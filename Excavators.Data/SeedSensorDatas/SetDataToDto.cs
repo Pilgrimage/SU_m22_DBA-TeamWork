@@ -1,4 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.IO;
 
 namespace Excavators.Data.SeedSensorDatas
 {
@@ -6,6 +6,7 @@ namespace Excavators.Data.SeedSensorDatas
     using System.Collections.Generic;
     using System.Linq;
     using Excavators.Models.DTO;
+    using Newtonsoft.Json;
 
     public static class SetDataToDto
     {
@@ -63,8 +64,15 @@ namespace Excavators.Data.SeedSensorDatas
                     }
                 }
 
+                Console.WriteLine($"Create temperature JSON files...");
+                string tempAllDtoJson = JsonConvert.SerializeObject(tempAllDto, Formatting.Indented);
+                string tempWarningsDtoJson = JsonConvert.SerializeObject(tempWarningsDto, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/tempAllDto.json", tempAllDtoJson);
+                File.WriteAllText("../../../ExportJson/tempWarningsDto.json", tempWarningsDtoJson);
+
                 Console.WriteLine($"Records in tempAllDto : {tempAllDto.Count}");
                 Console.WriteLine($"Records in tempWarningsDto : {tempWarningsDto.Count}");
+
                 Console.WriteLine();
             }
 
@@ -122,6 +130,13 @@ namespace Excavators.Data.SeedSensorDatas
                         currentWarningsDto.Add(valW);
                     }
                 }
+
+                Console.WriteLine($"Create current JSON files...");
+                string currentAllDtoJson = JsonConvert.SerializeObject(currentAllDto, Formatting.Indented);
+                string currentWarningsDtoJson = JsonConvert.SerializeObject(currentWarningsDto, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/currentAllDto.json", currentAllDtoJson);
+                File.WriteAllText("../../../ExportJson/currentWarningsDto.json", currentWarningsDtoJson);
+
                 Console.WriteLine($"Records in currentAllDto : {currentAllDto.Count}");
                 Console.WriteLine($"Records in currentWarningsDto : {currentWarningsDto.Count}");
                 Console.WriteLine();
@@ -180,6 +195,13 @@ namespace Excavators.Data.SeedSensorDatas
                         speedWarningsDto.Add(valW);
                     }
                 }
+
+                Console.WriteLine($"Create speed JSON files...");
+                string speedAllDtoJson = JsonConvert.SerializeObject(speedAllDto, Formatting.Indented);
+                string speedWarningsDtoJson = JsonConvert.SerializeObject(speedWarningsDto, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/speedAllDto.json", speedAllDtoJson);
+                File.WriteAllText("../../../ExportJson/speedWarningsDto.json", speedWarningsDtoJson);
+                
                 Console.WriteLine($"Records in speedAllDto : {speedAllDto.Count}");
                 Console.WriteLine($"Records in speedWarningsDto : {speedWarningsDto.Count}");
                 Console.WriteLine();
@@ -242,6 +264,13 @@ namespace Excavators.Data.SeedSensorDatas
                         tensionWarningsDto.Add(valW);
                     }
                 }
+
+                Console.WriteLine($"Create tension JSON files...");
+                string tensionAllDtoJson = JsonConvert.SerializeObject(tensionAllDto, Formatting.Indented);
+                string tensionWarningsDtoJson = JsonConvert.SerializeObject(tensionWarningsDto, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/tensionAllDto.json", tensionAllDtoJson);
+                File.WriteAllText("../../../ExportJson/tensionWarningsDto.json", tensionWarningsDtoJson);
+
                 Console.WriteLine($"Records in tensionAllDto : {tensionAllDto.Count}");
                 Console.WriteLine($"Records in tensionWarningsDto : {tensionWarningsDto.Count}");
                 Console.WriteLine();
@@ -295,6 +324,13 @@ namespace Excavators.Data.SeedSensorDatas
                         volumeWarningsDto.Add(valW);
                     }
                 }
+
+                Console.WriteLine($"Create volume JSON files...");
+                string volumeAllDtoJson = JsonConvert.SerializeObject(volumeAllDto, Formatting.Indented);
+                string volumeWarningsDtoJson = JsonConvert.SerializeObject(volumeWarningsDto, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/volumeAllDto.json", volumeAllDtoJson);
+                File.WriteAllText("../../../ExportJson/volumeWarningsDto.json", volumeWarningsDtoJson);
+                
                 Console.WriteLine($"Records in volumeAllDto : {volumeAllDto.Count}");
                 Console.WriteLine($"Records in volumeWarningsDto : {volumeWarningsDto.Count}");
                 Console.WriteLine();
@@ -347,6 +383,13 @@ namespace Excavators.Data.SeedSensorDatas
                         shiftingWarningsDto.Add(valW);
                     }
                 }
+
+                Console.WriteLine($"Create shifting JSON files...");
+                string shiftingAllDtoJson = JsonConvert.SerializeObject(shiftingAllDto, Formatting.Indented);
+                string shiftingWarningsDtoJson = JsonConvert.SerializeObject(shiftingWarningsDto, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/shiftingAllDto.json", shiftingAllDtoJson);
+                File.WriteAllText("../../../ExportJson/shiftingWarningsDto.json", shiftingWarningsDtoJson);
+
                 Console.WriteLine($"Records in shiftingAllDto : {shiftingAllDto.Count}");
                 Console.WriteLine($"Records in shiftingWarningsDto : {shiftingWarningsDto.Count}");
                 Console.WriteLine();
@@ -357,11 +400,11 @@ namespace Excavators.Data.SeedSensorDatas
 
         public static List<CurrentGrafDto> GetCurrentDataById(int currentId)
         {
-            List<CurrentGrafDto> currentGrafDtos = new List<CurrentGrafDto>();
+            List<CurrentGrafDto> currentGrafDtos2 = new List<CurrentGrafDto>();
 
             using (var ctx = new ExcavatorsContext())
             {
-                var qwerty = ctx.CurrentSensorDatas
+                var currentGrafDtos = ctx.CurrentSensorDatas
                     .Where(s => s.CurrentSensorId == currentId)
                     .Select(s => new CurrentGrafDto
                     {
@@ -369,9 +412,12 @@ namespace Excavators.Data.SeedSensorDatas
                         Current = s.Current
 
                     });
+                string currentGrafDtosJson = JsonConvert.SerializeObject(currentGrafDtos, Formatting.Indented);
+                File.WriteAllText("../../../ExportJson/currentGrafDto.json", currentGrafDtosJson);
+
             }
 
-            return currentGrafDtos;
+            return currentGrafDtos2;
         }
 
     }

@@ -11,6 +11,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.Client", "Excava
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excavators.WPF", "Excavators.WPF\Excavators.WPF.csproj", "{843CACE9-B450-455F-8869-640F0B7E3444}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExportJson", "ExportJson", "{E7ACCDA2-923D-46DF-B85B-5D43615017C8}"
+	ProjectSection(SolutionItems) = preProject
+		ExportJson\currentAllDto.json = ExportJson\currentAllDto.json
+		ExportJson\currentGrafDto.json = ExportJson\currentGrafDto.json
+		ExportJson\currentWarningsDto.json = ExportJson\currentWarningsDto.json
+		ExportJson\shiftingAllDto.json = ExportJson\shiftingAllDto.json
+		ExportJson\shiftingWarningsDto.json = ExportJson\shiftingWarningsDto.json
+		ExportJson\speedAllDto.json = ExportJson\speedAllDto.json
+		ExportJson\speedWarningsDto.json = ExportJson\speedWarningsDto.json
+		ExportJson\tempAllDto.json = ExportJson\tempAllDto.json
+		ExportJson\tempWarningsDto.json = ExportJson\tempWarningsDto.json
+		ExportJson\tensionAllDto.json = ExportJson\tensionAllDto.json
+		ExportJson\tensionWarningsDto.json = ExportJson\tensionWarningsDto.json
+		ExportJson\volumeAllDto.json = ExportJson\volumeAllDto.json
+		ExportJson\volumeWarningsDto.json = ExportJson\volumeWarningsDto.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

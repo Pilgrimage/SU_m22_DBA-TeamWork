@@ -1,0 +1,20 @@
+[
+  {
+    "SensorName": "VolumeSensor 2 - Volume excavated material im m3/hour (on Rotor Belt in Rs1200 B239)",
+    "Volume": "1019.066 m³/hour",
+    "TimeCollected": "2017-04-18  01:07:37",
+    "Warning": "The sensor is damaged or the connection with him is interrupted!"
+  },
+  {
+    "SensorName": "VolumeSensor 2 - Volume excavated material im m3/hour (on Rotor Belt in Rs1200 B239)",
+    "Volume": "1019.066 m³/hour",
+    "TimeCollected": "2017-04-18  01:07:37",
+    "Warning": "The sensor is damaged or the connection with him is interrupted!"
+  },
+  {
+    "SensorName": "VolumeSensor 2 - Volume excavated material im m3/hour (on Rotor Belt in Rs1200 B239)",
+    "Volume": "1019.066 m³/hour",
+    "TimeCollected": "2017-04-18  01:07:37",
+    "Warning": "The sensor is damaged or the connection with him is interrupted!"
+  }
+]
