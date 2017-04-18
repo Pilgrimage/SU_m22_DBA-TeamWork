@@ -400,24 +400,24 @@ namespace Excavators.Data.SeedSensorDatas
 
         public static List<CurrentGrafDto> GetCurrentDataById(int currentId)
         {
-            List<CurrentGrafDto> currentGrafDtos2 = new List<CurrentGrafDto>();
+            List<CurrentGrafDto> currentGrafDtos = new List<CurrentGrafDto>();
 
             using (var ctx = new ExcavatorsContext())
             {
-                var currentGrafDtos = ctx.CurrentSensorDatas
+                currentGrafDtos = ctx.CurrentSensorDatas
                     .Where(s => s.CurrentSensorId == currentId)
                     .Select(s => new CurrentGrafDto
                     {
                         Time = s.DTCollected,
                         Current = s.Current
 
-                    });
+                    }).ToList();
+
                 string currentGrafDtosJson = JsonConvert.SerializeObject(currentGrafDtos, Formatting.Indented);
                 File.WriteAllText("../../../ExportJson/currentGrafDto.json", currentGrafDtosJson);
 
             }
-
-            return currentGrafDtos2;
+            return currentGrafDtos;
         }
 
     }
