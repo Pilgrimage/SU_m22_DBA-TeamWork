@@ -36,8 +36,8 @@
 
                     DateTime currentTime = dt;
 
-                    //1500 records to be generated
-                    for (int j = 0; j < 1500; j++)
+                    //500 records to be generated
+                    for (int j = 0; j < 500; j++)
                     {
                         double rndValue = GetRndValue(emergencyHigh);
 
@@ -52,7 +52,7 @@
                         };
                         measurements.Add(newMeasurement);
 
-                        currentTime = currentTime.AddMinutes(1);
+                        currentTime = currentTime.AddMinutes(4);
                     }
 
                     ctx.TempSensorDatas.AddRange(measurements);
@@ -85,8 +85,8 @@
 
                     DateTime currentTime = dt;
 
-                    //1500 records to be generated
-                    for (int j = 0; j < 1500; j++)
+                    //500 records to be generated
+                    for (int j = 0; j < 500; j++)
                     {
                         double rndValue = GetRndValue(emergencyHigh);
 
@@ -101,7 +101,7 @@
                         };
                         measurements.Add(newMeasurement);
 
-                        currentTime = currentTime.AddMinutes(1);
+                        currentTime = currentTime.AddMinutes(4);
                     }
 
                     ctx.CurrentSensorDatas.AddRange(measurements);
@@ -134,8 +134,8 @@
 
                     DateTime currentTime = dt;
 
-                    //1500 records to be generated
-                    for (int j = 0; j < 1500; j++)
+                    //500 records to be generated
+                    for (int j = 0; j < 500; j++)
                     {
                         double rndValue = GetRndValue(warningHigh);
 
@@ -150,7 +150,7 @@
                         };
                         measurements.Add(newMeasurement);
 
-                        currentTime = currentTime.AddMinutes(1);
+                        currentTime = currentTime.AddMinutes(4);
                     }
 
                     ctx.SpeedSensorDatas.AddRange(measurements);
@@ -184,8 +184,8 @@
 
                     DateTime currentTime = dt;
 
-                    //1500 records to be generated
-                    for (int j = 0; j < 1500; j++)
+                    //500 records to be generated
+                    for (int j = 0; j < 500; j++)
                     {
                         double rndValue = GetRndValue(emergencyHigh);
 
@@ -200,7 +200,7 @@
                         };
                         measurements.Add(newMeasurement);
 
-                        currentTime = currentTime.AddMinutes(1);
+                        currentTime = currentTime.AddMinutes(4);
                     }
 
                     ctx.TensionSensorDatas.AddRange(measurements);
@@ -232,8 +232,8 @@
 
                     DateTime currentTime = dt;
 
-                    //1500 records to be generated
-                    for (int j = 0; j < 1500; j++)
+                    //500 records to be generated
+                    for (int j = 0; j < 500; j++)
                     {
                         double rndValue = GetRndValue(rangeMax*0.7);
 
@@ -248,7 +248,7 @@
                         };
                         measurements.Add(newMeasurement);
 
-                        currentTime = currentTime.AddMinutes(1);
+                        currentTime = currentTime.AddMinutes(4);
                     }
 
                     ctx.VolumeSensorDatas.AddRange(measurements);
@@ -276,8 +276,8 @@
 
                     DateTime currentTime = dt;
 
-                    //1500 records to be generated
-                    for (int j = 0; j < 1500; j++)
+                    //500 records to be generated
+                    for (int j = 0; j < 500; j++)
                     {
                         double rndValue = GetRndValue(0.65);
 
@@ -294,7 +294,7 @@
 
                         measurements.Add(newMeasurement);
 
-                        currentTime = currentTime.AddMinutes(1);
+                        currentTime = currentTime.AddMinutes(4);
                     }
 
                     ctx.ShiftingSensorDatas.AddRange(measurements);

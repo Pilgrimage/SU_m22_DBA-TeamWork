@@ -1,7 +1,6 @@
-﻿using System.IO;
-
-namespace Excavators.Data.SeedSensorDatas
+﻿namespace Excavators.Data.SeedSensorDatas
 {
+    using System.IO;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -30,11 +29,10 @@ namespace Excavators.Data.SeedSensorDatas
                         s.Status
                     });
 
-                var val = new TempAllDto();
-                var valW = new TempWarningsDto();
-
                 foreach (var item in tsdPrepare)
                 {
+                    var val = new TempAllDto();
+
                     val.SensorName = $"TempSensor {item.TempSensorId} - {item.Description}";
                     val.Temperature = $"{item.Temperature:F2} °C";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
@@ -42,6 +40,8 @@ namespace Excavators.Data.SeedSensorDatas
 
                     if (item.Status > 1)
                     {
+                        var valW = new TempWarningsDto();
+
                         valW.SensorName = val.SensorName;
                         valW.Temperature = val.Temperature;
                         valW.TimeCollected = val.TimeCollected;
@@ -97,11 +97,11 @@ namespace Excavators.Data.SeedSensorDatas
                         s.Status
                     });
 
-                var val = new CurrentAllDto();
-                var valW = new CurrentWarningsDto();
 
                 foreach (var item in csdPrepare)
                 {
+                    var val = new CurrentAllDto();
+
                     val.SensorName = $"CurrentSensor {item.CurrentSensorId} - {item.Description}";
                     val.Current = $"{item.Current:F2} A";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
@@ -109,6 +109,8 @@ namespace Excavators.Data.SeedSensorDatas
 
                     if (item.Status > 1)
                     {
+                        var valW = new CurrentWarningsDto();
+
                         valW.SensorName = val.SensorName;
                         valW.Current = val.Current;
                         valW.TimeCollected = val.TimeCollected;
@@ -162,11 +164,10 @@ namespace Excavators.Data.SeedSensorDatas
                         s.Status
                     });
 
-                var val = new SpeedAllDto();
-                var valW = new SpeedWarningsDto();
-
                 foreach (var item in ssdPrepare)
                 {
+                    var val = new SpeedAllDto();
+
                     val.SensorName = $"SpeedSensor {item.SpeedSensorId} - {item.Description}";
                     val.Speed = $"{item.Speed:F2} m/s";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
@@ -174,6 +175,8 @@ namespace Excavators.Data.SeedSensorDatas
 
                     if (item.Status > 1)
                     {
+                        var valW = new SpeedWarningsDto();
+
                         valW.SensorName = val.SensorName;
                         valW.Speed = val.Speed;
                         valW.TimeCollected = val.TimeCollected;
@@ -228,11 +231,10 @@ namespace Excavators.Data.SeedSensorDatas
                         s.Status
                     });
 
-                var val = new TensionAllDto();
-                var valW = new TensionWarningsDto();
-
                 foreach (var item in tsdPrepare)
                 {
+                    var val = new TensionAllDto();
+
                     val.SensorName = $"TensionSensor {item.TensionSensorId} - {item.Description}";
                     val.Tension = $"{item.Tension:F3} t";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
@@ -240,6 +242,8 @@ namespace Excavators.Data.SeedSensorDatas
 
                     if (item.Status > 1)
                     {
+                        var valW = new TensionWarningsDto();
+
                         valW.SensorName = val.SensorName;
                         valW.Tension = val.Tension;
                         valW.TimeCollected = val.TimeCollected;
@@ -297,11 +301,10 @@ namespace Excavators.Data.SeedSensorDatas
                         s.Status
                     });
 
-                var val = new VolumeAllDto();
-                var valW = new VolumeWarningsDto();
-
                 foreach (var item in vsdPrepare)
                 {
+                    var val = new VolumeAllDto();
+
                     val.SensorName = $"VolumeSensor {item.VolumeSensorId} - {item.Description}";
                     val.Volume = $"{item.Volume:F3} m³/hour";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
@@ -309,6 +312,8 @@ namespace Excavators.Data.SeedSensorDatas
 
                     if (item.Status > 1)
                     {
+                        var valW = new VolumeWarningsDto();
+
                         valW.SensorName = val.SensorName;
                         valW.Volume = val.Volume;
                         valW.TimeCollected = val.TimeCollected;
@@ -356,11 +361,10 @@ namespace Excavators.Data.SeedSensorDatas
                         s.Status
                     });
 
-                var val = new ShiftingAllDto();
-                var valW = new ShiftingWarningsDto();
-
                 foreach (var item in ssdPrepare)
                 {
+                    var val = new ShiftingAllDto();
+
                     val.SensorName = $"ShiftingSensor {item.ShiftingSensorId} - {item.Description}";
                     val.IsShifted = item.IsShifted ? "Belt is shifted!" : "Belt is OK";
                     val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
@@ -368,6 +372,8 @@ namespace Excavators.Data.SeedSensorDatas
 
                     if (item.Status > 1)
                     {
+                        var valW = new ShiftingWarningsDto();
+
                         valW.SensorName = val.SensorName;
                         valW.IsShifted = val.IsShifted;
                         valW.TimeCollected = val.TimeCollected;
