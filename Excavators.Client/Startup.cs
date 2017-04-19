@@ -109,10 +109,7 @@
                 // There are two tables (objects): 
                 // shiftingAllDto as List<ShiftingAllDto>
                 // shiftingWarningsDto as List<shiftingWarningsDto>
-
             }
-
-            var proba = SetDataToDto.GetCurrentDataById(1);
         }
     }
 }

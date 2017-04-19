@@ -1,26 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Newtonsoft.Json;
-using Excavators.Models.DTO;
-
-namespace Excavators.WPF
+﻿namespace Excavators.WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+    using Newtonsoft.Json;
+    using Excavators.Models.DTO;
+   
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -107,11 +94,6 @@ namespace Excavators.WPF
                 var volumeWarnings = JsonConvert.DeserializeObject<IEnumerable<VolumeWarningsDto>>(json);
                 dataGrid.ItemsSource = volumeWarnings.Take(500);
             }
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
