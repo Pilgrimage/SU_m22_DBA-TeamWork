@@ -19,16 +19,14 @@
         {
             if (RadioButtonAllValues.IsChecked==true)
             {
-                var json = File.ReadAllText("../../../ExportJson/tempAllDto.json");
-                var tempAll = JsonConvert.DeserializeObject<IEnumerable<TempAllDto>>(json);
-                dataGrid.ItemsSource= tempAll.Take(500);
+                var tempAll = Excavators.Data.SeedSensorDatas.SetDataToDto.SetDataToTempDtosAll();
+                dataGrid.ItemsSource = tempAll;
 
             }
             else if (RadioButtonOnlyWarnings.IsChecked==true)
             {
-                var json = File.ReadAllText("../../../ExportJson/tempWarningsDto.json");
-                var tempWarnings = JsonConvert.DeserializeObject<IEnumerable<TempWarningsDto>>(json);
-                dataGrid.ItemsSource = tempWarnings.Take(500);
+                var tempWarnings = Excavators.Data.SeedSensorDatas.SetDataToDto.SetDataToTempDtosWar();
+                dataGrid.ItemsSource = tempWarnings;
             }
         }
 
@@ -38,13 +36,13 @@
             {
                 var json = File.ReadAllText("../../../ExportJson/currentAllDto.json");
                 var currentAll = JsonConvert.DeserializeObject<IEnumerable<CurrentAllDto>>(json);
-                dataGrid.ItemsSource = currentAll.Take(500);
+                dataGrid.ItemsSource = currentAll;//.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
                 var json = File.ReadAllText("../../../ExportJson/currentWarningsDto.json");
                 var currentWarnings = JsonConvert.DeserializeObject<IEnumerable<CurrentWarningsDto>>(json);
-                dataGrid.ItemsSource = currentWarnings.Take(500);
+                dataGrid.ItemsSource = currentWarnings;//.Take(500);
             }
         }
 
@@ -54,13 +52,13 @@
             {
                 var json = File.ReadAllText("../../../ExportJson/speedAllDto.json");
                 var speedAll = JsonConvert.DeserializeObject<IEnumerable<SpeedAllDto>>(json);
-                dataGrid.ItemsSource = speedAll.Take(500);
+                dataGrid.ItemsSource = speedAll;//.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
                 var json = File.ReadAllText("../../../ExportJson/speedWarningsDto.json");
                 var speedWarnings = JsonConvert.DeserializeObject<IEnumerable<SpeedWarningsDto>>(json);
-                dataGrid.ItemsSource = speedWarnings.Take(500);
+                dataGrid.ItemsSource = speedWarnings;//.Take(500);
             }
         }
 
@@ -70,13 +68,13 @@
             {
                 var json = File.ReadAllText("../../../ExportJson/tensionAllDto.json");
                 var tensionAll = JsonConvert.DeserializeObject<IEnumerable<TensionAllDto>>(json);
-                dataGrid.ItemsSource = tensionAll.Take(500);
+                dataGrid.ItemsSource = tensionAll;//.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
                 var json = File.ReadAllText("../../../ExportJson/tensionWarningsDto.json");
                 var tensionWarnings = JsonConvert.DeserializeObject<IEnumerable<TensionWarningsDto>>(json);
-                dataGrid.ItemsSource = tensionWarnings.Take(500);
+                dataGrid.ItemsSource = tensionWarnings;//.Take(500);
             }
         }
 
@@ -86,13 +84,13 @@
             {
                 var json = File.ReadAllText("../../../ExportJson/volumeAllDto.json");
                 var volumeAll = JsonConvert.DeserializeObject<IEnumerable<VolumeAllDto>>(json);
-                dataGrid.ItemsSource = volumeAll.Take(500);
+                dataGrid.ItemsSource = volumeAll;//.Take(500);
             }
             else if (RadioButtonOnlyWarnings.IsChecked == true)
             {
                 var json = File.ReadAllText("../../../ExportJson/volumeWarningsDto.json");
                 var volumeWarnings = JsonConvert.DeserializeObject<IEnumerable<VolumeWarningsDto>>(json);
-                dataGrid.ItemsSource = volumeWarnings.Take(500);
+                dataGrid.ItemsSource = volumeWarnings;//.Take(500);
             }
         }
     }

@@ -78,6 +78,125 @@
 
         }
 
+
+        public static List<TempAllDto> SetDataToTempDtosAll()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                //Console.WriteLine("Set Data to Temperature DTOs...");
+                var tempAllDto = new List<TempAllDto>();
+                var tempWarningsDto = new List<TempWarningsDto>();
+
+                var tsdPrepare = ctx.TempSensorDatas
+                    .Include("TempSensor")
+                    .Select(s => new
+                    {
+                        s.DTCollected,
+                        s.Temperature,
+                        s.TempSensorId,
+                        Description = s.TempSensor.Description,
+                        s.Status
+                    });
+
+                foreach (var item in tsdPrepare)
+                {
+                    var val = new TempAllDto();
+
+                    val.SensorName = $"TempSensor {item.TempSensorId} - {item.Description}";
+                    val.Temperature = $"{item.Temperature:F2} °C";
+                    val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
+                    tempAllDto.Add(val);
+
+                    if (item.Status > 1)
+                    {
+                        var valW = new TempWarningsDto();
+
+                        valW.SensorName = val.SensorName;
+                        valW.Temperature = val.Temperature;
+                        valW.TimeCollected = val.TimeCollected;
+                        valW.Warning = "";
+
+                        switch (item.Status)
+                        {
+                            case 8:
+                                valW.Warning = "High Temperature!";
+                                break;
+                            case 16:
+                                valW.Warning = "Emergency High Temperature!";
+                                break;
+                            case 64:
+                                valW.Warning = "The sensor is damaged or the connection with him is interrupted!";
+                                break;
+                        }
+
+                        tempWarningsDto.Add(valW);
+                    }
+                }
+                return tempAllDto;
+            }
+
+        }
+
+        public static List<TempWarningsDto> SetDataToTempDtosWar()
+        {
+            using (var ctx = new ExcavatorsContext())
+            {
+                //Console.WriteLine("Set Data to Temperature DTOs...");
+                var tempAllDto = new List<TempAllDto>();
+                var tempWarningsDto = new List<TempWarningsDto>();
+
+                var tsdPrepare = ctx.TempSensorDatas
+                    .Include("TempSensor")
+                    .Select(s => new
+                    {
+                        s.DTCollected,
+                        s.Temperature,
+                        s.TempSensorId,
+                        Description = s.TempSensor.Description,
+                        s.Status
+                    });
+
+                foreach (var item in tsdPrepare)
+                {
+                    var val = new TempAllDto();
+
+                    val.SensorName = $"TempSensor {item.TempSensorId} - {item.Description}";
+                    val.Temperature = $"{item.Temperature:F2} °C";
+                    val.TimeCollected = item.DTCollected.ToString("yyyy-MM-dd  hh:mm:ss");
+                    tempAllDto.Add(val);
+
+                    if (item.Status > 1)
+                    {
+                        var valW = new TempWarningsDto();
+
+                        valW.SensorName = val.SensorName;
+                        valW.Temperature = val.Temperature;
+                        valW.TimeCollected = val.TimeCollected;
+                        valW.Warning = "";
+
+                        switch (item.Status)
+                        {
+                            case 8:
+                                valW.Warning = "High Temperature!";
+                                break;
+                            case 16:
+                                valW.Warning = "Emergency High Temperature!";
+                                break;
+                            case 64:
+                                valW.Warning = "The sensor is damaged or the connection with him is interrupted!";
+                                break;
+                        }
+
+                        tempWarningsDto.Add(valW);
+                    }
+                }
+                return tempWarningsDto;
+            }
+
+        }
+
+
+
         public static void SetDataToCurrentDtos()
         {
             using (var ctx = new ExcavatorsContext())
